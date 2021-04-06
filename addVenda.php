@@ -10,38 +10,51 @@
     $total = 0;
 
     try {
-        //substituindo o cpf pelo id
+        //substituindo o cpf pelo id do vendedor
         $comando1 = $conexao->prepare("SELECT id FROM vendedores WHERE cpf = '$vendedor'");
         $comando1->execute();
 
-        echo $comando1->rowCount();
+        $resu1 = $comando1->fetchAll();
 
-        foreach($comando1 as $row){
+        foreach($resu1 as $row){
             $vendedor = $row['id'];
         }
 
-        //substituindo o cpf pelo id
+        //substituindo o cpf pelo id do cliente
         $comando2 = $conexao->prepare("SELECT id FROM clientes WHERE cpf = '$cliente'");
         $comando2->execute();
 
-        echo $comando2->rowCount();
+        $resu2 = $comando2->fetchAll();
 
-        foreach($comando2 as $row){
+        foreach($resu2 as $row){
             $cliente = $row['id'];
         }
 
         //substituindo o nome do produto pelo id
-        $comando3 = $conexao->prepare("SELECT id, quantidade FROM produtos WHERE produto = '$produto'");
+        $comando3 = $conexao->prepare("SELECT id FROM produtos WHERE produto = '$produto'");
         $comando3->execute();
 
-        echo $comando3->rowCount();
+        $resu3 = $comando3->fetchAll();
 
-        foreach($comando3 as $row){
+        foreach($resu3 as $row){
             $produto = $row['id'];
-            $total = $row['quantidade']
         }
 
-        //$quantidade = $total - $quantidade;
+        //procurando a quantidade existente do produto
+        $comando4 = $conexao->prepare("SELECT quantidade FROM produtos WHERE id = '$produto'");
+        $comando4->execute();
+
+        $resu4 = $comando4->fetchAll();
+
+        foreach($resu4 as $row){
+            $total = $row['quantidade'];
+        }
+
+        //Update na quantidade do produto
+        $resto = $total - $quantidade;
+
+        $update = $conexao->prepare("UPDATE produtos SET quantidade = '$resto' WHERE id = '$produto'");
+        $update->execute();
 
         //inclusão
         $sql = $conexao->prepare("INSERT INTO vendas (id_vendedor, id_cliente, id_produto, quantidade, preco, data_venda) VALUES (:vendedor, :cliente, :produto, :quantidade, :preco, :data_venda);");
@@ -59,9 +72,6 @@
         } else {
             echo "<script>alert('Erro de gravação!!');history.go(-1);</script>;";
         }
-
-        //Update na quantidade do produto
-        //$update = $conexao->prepare("UPDATE")
     } catch (PDOException $e){
         echo "Error: " . $e->getMessage();
     }
