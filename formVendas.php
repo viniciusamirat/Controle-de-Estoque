@@ -62,7 +62,7 @@
         </div>
         <div class="formulario">
             <form method="POST" action="addVenda.php">
-                <input class="input-group" list="browsers1" name="vendedor" placeholder="Nome do Vendedor"><br>
+                <input class="input-group" list="browsers1" name="vendedor" placeholder="CPF do Vendedor"><br>
                     <datalist id="browsers1">
                         <?php
                             foreach ($resuVendedor as $row){
@@ -70,7 +70,7 @@
                             }
                         ?>
                     </datalist>
-                <input class="input-group" list="browsers2" name="cliente" placeholder="Nome do Cliente"><br>
+                <input class="input-group" list="browsers2" name="cliente" placeholder="CPF do Cliente"><br>
                     <datalist id="browsers2">
                         <?php
                             foreach ($resuCliente as $row){
@@ -87,8 +87,8 @@
                         ?>
                     </datalist>
                 
-                <input class="input-group" type="number" name="quantidade" placeholder="Quantidade"><br>
-                <input class="input-group" type="number" step="0.01" name="preco" placeholder="Preço"><br>
+                <input class="input-group" type="number" name="quantidade" min=1 placeholder="Quantidade"><br>
+                <input class="input-group" type="number" step="0.01" min=0 name="preco" placeholder="Preço"><br>
                 <input class="input-group" type="date" name="data" placeholder="Data da venda"><br>
                 <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-success">

@@ -41,8 +41,8 @@
             <form action="addProduto.php" method="POST">
                 <input class="input-group" type="text" name="produto" placeholder="Nome do Produto" maxlength="100" required><br>
                 <input class="input-group" type="text" name="marca" placeholder="Marca" maxlength="50" required><br>
-                <input class="input-group" type="number" step="0.01" name="preco" placeholder="Preço" required><br>
-                <input class="input-group" type="number" name="quantidade" placeholder="Quantidade em estoque" required><br>
+                <input class="input-group" type="number" step="0.01" name="preco" min=0 placeholder="Preço" required><br>
+                <input class="input-group" type="number" name="quantidade" min=1 placeholder="Quantidade em estoque" required><br>
                 <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-success">
             </form>

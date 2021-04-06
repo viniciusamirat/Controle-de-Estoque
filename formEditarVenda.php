@@ -16,6 +16,7 @@
         include_once "conexao.php";
 
         $id = $_GET['id'];
+        $_SESSION['venda'] = $id;
         $cpfVendedor;
         $cpfCliente;
         $nomeProduto;
@@ -164,8 +165,8 @@
             <button type="button" class="btn btn-danger" onclick="window.location.href='sair.php'" name="clientes">Sair</button>
         </div>
         <div class="formulario">
-            <form method="POST" action="#">
-                <input class="input-group" list="browsers1" name="vendedor" <?php echo "value='$cpfVendedor'"?> placeholder="Nome do Vendedor"><br>
+            <form method="POST" action="updateVenda.php">
+                <input class="input-group" list="browsers1" name="vendedor" <?php echo "value='$cpfVendedor'"?> placeholder="CPF do Vendedor"><br>
                     <datalist id="browsers1">
                         <?php
                             foreach ($resuVendedor as $row){
@@ -173,7 +174,7 @@
                             }
                         ?>
                     </datalist>
-                <input class="input-group" list="browsers2" name="cliente" <?php echo "value='$cpfCliente'"?> placeholder="Nome do Cliente"><br>
+                <input class="input-group" list="browsers2" name="cliente" <?php echo "value='$cpfCliente'"?> placeholder="CPF do Cliente"><br>
                     <datalist id="browsers2">
                         <?php
                             foreach ($resuCliente as $row){
@@ -190,11 +191,11 @@
                         ?>
                     </datalist>
                 
-                <input class="input-group" type="number" name="quantidade" <?php echo "value='$quantidade'"?> placeholder="Quantidade"><br>
-                <input class="input-group" type="number" step="0.01" name="preco" <?php echo "value='$preco'"?> placeholder="Preço"><br>
-                <input class="input-group" type="date" name="data" <?php echo "value='$data_venda'"?> placeholder="Data da venda"><br>
+                <input class="input-group" type="number" name="quantidade" min=1 <?php echo "value='$quantidade'"?> placeholder="Quantidade"><br>
+                <input class="input-group" type="number" step="0.01" min=0 name="preco" <?php echo "value='$preco'"?> placeholder="Preço"><br>
+                <!--<input class="input-group" type="date" name="data" <?php echo "value='$data_venda'"?> placeholder="Data da venda"><br>-->
                 <input type="reset" value="Limpar" class="btn btn-danger">
-                <input type="submit" value="Adicionar" class="btn btn-success">
+                <input type="submit" value="Aplicar mudanças" class="btn btn-success">
             </form>
         </div>
     </div>
