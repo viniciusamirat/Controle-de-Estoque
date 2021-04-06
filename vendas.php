@@ -69,6 +69,7 @@
                         <th>Preco</th>
                         <th>Data</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -82,6 +83,7 @@
                                     <td>".$resultado1[$c]['quantidade']."</td>
                                     <td>R$ ".$resultado1[$c]['preco']."</td>
                                     <td>".$resultado1[$c]['data_venda']."</td>
+                                    <td><a href='formEditarVenda.php?id=".$resultado1[$c]['id']."'>Editar</a></td>
                                     <td><a href='excluirVenda.php?id=".$resultado1[$c]['id']."'>Excluir</a></td>
                                 </tr>";
                         }

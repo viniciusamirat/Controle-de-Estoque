@@ -42,7 +42,7 @@
         <div class="container-fluid centralizar cabecalho">
             <h1>Adicionar Venda</h1>
         </div>
-        <div class="container-fluid centralizar sombra">
+        <div class="container-fluid centralizar">
             <button type="button" class="btn btn-success" onclick="window.location.href='estoque.php'" name="estoque">Estoque</button>
             <button type="button" class="btn btn-success" onclick="window.location.href='vendas.php'" name="vendas">Vendas</button>
             <button type="button" class="btn btn-success" onclick="window.location.href='vendedores.php'" name="vendedores">Vendedores</button>
