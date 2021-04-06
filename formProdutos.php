@@ -43,6 +43,7 @@
                 <input class="input-group" type="text" name="marca" placeholder="Marca" maxlength="50" required><br>
                 <input class="input-group" type="number" step="0.01" name="preco" placeholder="Preço" required><br>
                 <input class="input-group" type="number" name="quantidade" placeholder="Quantidade em estoque" required><br>
+                <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-success">
             </form>
         </div>

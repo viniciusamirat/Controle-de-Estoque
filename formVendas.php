@@ -16,13 +16,13 @@
         include_once "conexao.php";
 
         try{
-            $vendedores = $conexao->prepare("SELECT nome FROM vendedores");
+            $vendedores = $conexao->prepare("SELECT cpf FROM vendedores");
             $vendedores->execute();
 
             $resuVendedor = $vendedores->fetchAll();
 
 
-            $clientes = $conexao->prepare("SELECT nome FROM clientes");
+            $clientes = $conexao->prepare("SELECT cpf FROM clientes");
             $clientes->execute();
 
             $resuCliente = $clientes->fetchAll();
@@ -62,26 +62,22 @@
         </div>
         <div class="formulario">
             <form method="POST" action="addVenda.php">
-                <!--<input class="input-group" type="text" name="vendedor" placeholder="Nome do Vendedor"><br>-->
                 <input class="input-group" list="browsers1" name="vendedor" placeholder="Nome do Vendedor"><br>
                     <datalist id="browsers1">
                         <?php
                             foreach ($resuVendedor as $row){
-                                echo "<option value='".$row['nome']."'>";
+                                echo "<option value='".$row['cpf']."'>";
                             }
                         ?>
                     </datalist>
-                <!--<input class="input-group" type="text" name="cliente" placeholder="Nome do Cliente"><br>-->
                 <input class="input-group" list="browsers2" name="cliente" placeholder="Nome do Cliente"><br>
                     <datalist id="browsers2">
                         <?php
                             foreach ($resuCliente as $row){
-                                echo "<option value='".$row['nome']."'>";
+                                echo "<option value='".$row['cpf']."'>";
                             }
                         ?>
                     </datalist>
-                
-                <!--<input class="input-group" type="text" name="produto" placeholder="Produto"><br>-->
                 <input class="input-group" list="browsers3" name="produto" placeholder="Produto"><br>
                     <datalist id="browsers3">
                          <?php
@@ -94,6 +90,7 @@
                 <input class="input-group" type="number" name="quantidade" placeholder="Quantidade"><br>
                 <input class="input-group" type="number" step="0.01" name="preco" placeholder="Preço"><br>
                 <input class="input-group" type="date" name="data" placeholder="Data da venda"><br>
+                <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-success">
             </form>
         </div>

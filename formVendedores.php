@@ -40,8 +40,9 @@
         <div class="formulario">
             <form method="POST" action="addVendedor.php">
                 <input class="input-group" type="text" name="vendedor" placeholder="Nome do Vendedor" maxlength="100" required><br>
-                <input class="input-group" type="text" name="cpf" placeholder="CPF" maxlength="11" required><br>
+                <input class="input-group" type="text" name="cpf" placeholder="CPF" maxlength="14" required><br>
                 <input class="input-group" type="text" name="tel" placeholder="Telefone" maxlength="15" required><br>
+                <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-success">
             </form>
         </div>
