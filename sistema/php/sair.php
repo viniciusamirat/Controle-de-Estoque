@@ -4,5 +4,5 @@ session_start();
 unset($_SESSION['usuario']);
 unset($_SESSION['senha']);
 
-header('location:index.html');
+header('location:./index.html');
 ?>

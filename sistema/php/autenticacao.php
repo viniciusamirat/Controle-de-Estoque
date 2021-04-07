@@ -4,6 +4,6 @@
         unset($_SESSION['usuario']);
         unset($_SESSION['senha']);
         
-        header('location:index.html');
+        header('location:sistema\index.html');
     }
 ?>
