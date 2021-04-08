@@ -38,7 +38,7 @@
             <button type="button" class="btn btn-danger" onclick="window.location.href='sair.php'" name="clientes">Sair</button>
         </div>
         <div class="formulario">
-            <form action="addProduto.php" method="POST">
+            <form action="php/addProduto.php" method="POST">
                 <input class="input-group" type="text" name="produto" placeholder="Nome do Produto" maxlength="100" required><br>
                 <input class="input-group" type="text" name="marca" placeholder="Marca" maxlength="50" required><br>
                 <input class="input-group" type="number" step="0.01" name="preco" min=0 placeholder="Preço" required><br>

@@ -8,7 +8,6 @@
     $produto = $_POST['produto'];
     $quantidade = $_POST['quantidade'];
     $preco = $_POST['preco'];
-    $data = $_POST['data'];
     $total = 0;
 
     try {
@@ -62,8 +61,8 @@
             $quantidadeVenda = $row['quantidade'];
         }
 
-        //Update na quantidade do produto da venda
-        $update1 = $conexao->prepare("UPDATE vendas SET id_vendedor = $vendedor, id_cliente = $cliente, id_produto = $produto, quantidade = $quantidade, preco = $preco, data_venda = $data WHERE id = $idVenda");
+        //Update da venda
+        $update1 = $conexao->prepare("UPDATE vendas SET id_vendedor = $vendedor, id_cliente = $cliente, id_produto = $produto, quantidade = $quantidade, preco = $preco WHERE id = $idVenda");
         $update1->execute();
 
         //Update na quantidade do produto do estoque

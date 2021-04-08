@@ -17,7 +17,7 @@ try {
         $_SESSION['usuario'] = $usuario;
         $_SESSION['senha'] = $senha;
 
-        header('location:../estoque.php');
+        header('location:./estoque.php');
     } else {
         echo "Error: Usuário não encontrado";
         header('location:./index.html');

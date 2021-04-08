@@ -61,7 +61,7 @@
             <button type="button" class="btn btn-danger" onclick="window.location.href='sair.php'" name="clientes">Sair</button>
         </div>
         <div class="formulario">
-            <form method="POST" action="addVenda.php">
+            <form method="POST" action="php/addVenda.php">
                 <input class="input-group" list="browsers1" name="vendedor" placeholder="CPF do Vendedor"><br>
                     <datalist id="browsers1">
                         <?php

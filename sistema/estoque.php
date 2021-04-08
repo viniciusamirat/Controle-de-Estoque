@@ -53,6 +53,7 @@
                         <th>Preço</th>
                         <th>Quantidade em estoque</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,7 +65,8 @@
                                     <td>".$row['marca']."</td>
                                     <td>R$ ".$row['preco']."</td>
                                     <td>".$row['quantidade']."</td>
-                                    <td><a href='excluirProduto.php?id=".$row['id']."'>Excluir</a></td>
+                                    <td><a href='formEditarProduto.php?id=".$row['id']."'>Editar</a></td>
+                                    <td><a href='php/excluirProduto.php?id=".$row['id']."'>Excluir</a></td>
                                 </tr>";
                         }
                     }
