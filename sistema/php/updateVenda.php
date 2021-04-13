@@ -15,9 +15,7 @@
         $comando1 = $conexao->prepare("SELECT id FROM vendedores WHERE cpf = '$vendedor'");
         $comando1->execute();
 
-        $resu1 = $comando1->fetchAll();
-
-        foreach($resu1 as $row){
+        foreach($comando1->fetchAll() as $row){
             $vendedor = $row['id'];
         }
 
@@ -25,9 +23,7 @@
         $comando2 = $conexao->prepare("SELECT id FROM clientes WHERE cpf = '$cliente'");
         $comando2->execute();
 
-        $resu2 = $comando2->fetchAll();
-
-        foreach($resu2 as $row){
+        foreach($comando2->fetchAll() as $row){
             $cliente = $row['id'];
         }
 
@@ -35,9 +31,7 @@
         $comando3 = $conexao->prepare("SELECT id FROM produtos WHERE produto = '$produto'");
         $comando3->execute();
 
-        $resu3 = $comando3->fetchAll();
-
-        foreach($resu3 as $row){
+        foreach($comando3->fetchAll() as $row){
             $produto = $row['id'];
         }
 
@@ -45,9 +39,7 @@
         $comando4 = $conexao->prepare("SELECT quantidade FROM produtos WHERE id = '$produto'");
         $comando4->execute();
 
-        $resu4 = $comando4->fetchAll();
-
-        foreach($resu4 as $row){
+        foreach($comando4->fetchAll() as $row){
             $total = $row['quantidade'];
         }
 
@@ -55,9 +47,7 @@
         $comando5 = $conexao->prepare("SELECT quantidade FROM vendas WHERE id = $idVenda");
         $comando5->execute();
 
-        $resu5 = $comando5->fetchAll();
-
-        foreach($resu5 as $row){
+        foreach($comando5->fetchAll() as $row){
             $quantidadeVenda = $row['quantidade'];
         }
 
@@ -72,9 +62,9 @@
         $update2->execute();
 
         if ($update1->rowCount() == 1){
-            echo "<script>alert('Gravado com sucesso!!');history.go(-1);</script>";
+            echo "<script>alert('Gravado com sucesso!!');history.go(-2);</script>";
         } else {
-            echo "<script>alert('Erro de gravação!!');history.go(-1);</script>;";
+            echo "<script>alert('Erro de gravação!!');history.go(-2);</script>;";
         }
     } catch (PDOException $e){
         echo "Error: " . $e->getMessage();

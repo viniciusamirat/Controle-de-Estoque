@@ -14,9 +14,9 @@
         $update1->execute();
 
         if ($update1->rowCount() == 1){
-            echo "<script>alert('Gravado com sucesso!!');history.go(-1);</script>";
+            echo "<script>alert('Gravado com sucesso!!');history.go(-2);</script>";
         } else {
-            echo "<script>alert('Erro de gravação!!');history.go(-1);</script>;";
+            echo "<script>alert('Erro de gravação!!');history.go(-2);</script>;";
         }
     } catch (PDOException $e){
         echo "Error: " . $e->getMessage();
