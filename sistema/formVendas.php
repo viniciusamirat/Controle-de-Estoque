@@ -58,11 +58,11 @@
                   <a class="dropdown-item" href="formClientes.php">Adicionar Clientes</a>
                 </div>
             </div>
-            <button type="button" class="btn btn-danger" onclick="window.location.href='sair.php'" name="clientes">Sair</button>
+            <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
         </div>
         <div class="formulario">
             <form method="POST" action="php/addVenda.php">
-                <input class="input-group" list="browsers1" name="vendedor" placeholder="CPF do Vendedor"><br>
+                <input class="input-group" list="browsers1" name="vendedor" placeholder="CPF do Vendedor" required autofocus><br>
                     <datalist id="browsers1">
                         <?php
                             foreach ($resuVendedor as $row){
@@ -70,7 +70,7 @@
                             }
                         ?>
                     </datalist>
-                <input class="input-group" list="browsers2" name="cliente" placeholder="CPF do Cliente"><br>
+                <input class="input-group" list="browsers2" name="cliente" placeholder="CPF do Cliente" required><br>
                     <datalist id="browsers2">
                         <?php
                             foreach ($resuCliente as $row){
@@ -78,7 +78,7 @@
                             }
                         ?>
                     </datalist>
-                <input class="input-group" list="browsers3" name="produto" placeholder="Produto"><br>
+                <input class="input-group" list="browsers3" name="produto" placeholder="Produto" required><br>
                     <datalist id="browsers3">
                          <?php
                             foreach ($resuproduto as $row){
@@ -87,9 +87,9 @@
                         ?>
                     </datalist>
                 
-                <input class="input-group" type="number" name="quantidade" min=1 placeholder="Quantidade"><br>
-                <input class="input-group" type="number" step="0.01" min=0 name="preco" placeholder="Preço"><br>
-                <input class="input-group" type="date" name="data" placeholder="Data da venda"><br>
+                <input class="input-group" type="number" name="quantidade" min=1 placeholder="Quantidade" required><br>
+                <input class="input-group" type="number" step="0.01" min=0 name="preco" placeholder="Preço" required><br>
+                <input class="input-group" type="date" name="data" placeholder="Data da venda" required><br>
                 <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-success">
             </form>

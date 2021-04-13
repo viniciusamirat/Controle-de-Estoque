@@ -35,11 +35,11 @@
                   <a class="dropdown-item" href="formClientes.php">Adicionar Clientes</a>
                 </div>
             </div>
-            <button type="button" class="btn btn-danger" onclick="window.location.href='sair.php'" name="clientes">Sair</button>
+            <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
         </div>
         <div class="formulario">
             <form method="POST" action="php/addVendedor.php">
-                <input class="input-group" type="text" name="vendedor" placeholder="Nome do Vendedor" maxlength="100" required><br>
+                <input class="input-group" type="text" name="vendedor" placeholder="Nome do Vendedor" maxlength="100" required autofocus><br>
                 <input class="input-group" type="text" name="cpf" placeholder="CPF" maxlength="14" required><br>
                 <input class="input-group" type="text" name="tel" placeholder="Telefone" maxlength="15" required><br>
                 <input type="reset" value="Limpar" class="btn btn-danger">

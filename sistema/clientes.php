@@ -43,7 +43,7 @@
                   <a class="dropdown-item" href="formClientes.php">Adicionar Clientes</a>
                 </div>
             </div>
-            <button type="button" class="btn btn-danger" onclick="window.location.href='sair.php'" name="clientes">Sair</button>
+            <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
         </div>
         <div class="tabela">
             <table  class="table table-hover">

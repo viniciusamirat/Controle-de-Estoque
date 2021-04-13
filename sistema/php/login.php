@@ -17,10 +17,9 @@ try {
         $_SESSION['usuario'] = $usuario;
         $_SESSION['senha'] = $senha;
 
-        header('location:./estoque.php');
+        header('location:../estoque.php');
     } else {
-        echo "Error: Usuário não encontrado";
-        header('location:./index.html');
+        header('location:../index.html');
     }
 } catch (PDOException $e){
     echo "Error: " . $e->getMessage();
