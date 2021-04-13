@@ -183,7 +183,7 @@
                 
                 <input class="input-group" type="number" name="quantidade" min=1 <?php echo "value='$quantidade'"?> placeholder="Quantidade" required><br>
                 <input class="input-group" type="number" step="0.01" min=0 name="preco" <?php echo "value='$preco'"?> placeholder="Preço" required><br>
-                <input type="reset" value="Limpar" class="btn btn-danger">
+                <input type="button" onclick="window.location.href='vendas.php'" value="Cancelar" class="btn btn-danger">
                 <input type="submit" value="Aplicar mudanças" class="btn btn-success">
             </form>
         </div>

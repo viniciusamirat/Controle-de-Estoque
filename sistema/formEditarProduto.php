@@ -98,8 +98,8 @@
                 <input class="input-group" type="text" name="marca" <?php echo "value='$marca'"?> placeholder="Marca" maxlength="50" required><br>
                 <input class="input-group" type="number" step="0.01" name="preco" <?php echo "value='$preco'"?> min=0 placeholder="Preço" required><br>
                 <input class="input-group" type="number" name="quantidade" <?php echo "value='$quantidade'"?> min=1 placeholder="Quantidade em estoque" required><br>
-                <input type="reset" value="Limpar" class="btn btn-danger">
-                <input type="submit" value="Adicionar" class="btn btn-success">
+                <input type="button" onclick="window.location.href='estoque.php'" value="Cancelar" class="btn btn-danger">
+                <input type="submit" value="Aplicar mudanças" class="btn btn-success">
             </form>
         </div>
     </div>
