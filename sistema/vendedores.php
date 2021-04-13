@@ -51,6 +51,8 @@
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Telefone</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,6 +63,8 @@
                                         <td>".$row['nome']."</td>
                                         <td>".$row['cpf']."</td>
                                         <td>".$row['telefone']."</td>
+                                        <td><a href='formEditarVendedor.php?id=".$row['id']."'>Editar</a></td>
+                                        <td><a href='php/excluirVendedor.php?id=".$row['id']."'>Excluir</a></td>
                                     </tr>";
                             }
                         }                    

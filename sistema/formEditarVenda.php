@@ -22,7 +22,6 @@
         $nomeProduto;
         $quantidade;
         $preco;
-        $data_venda;
 
         try{
             $idVendedor = 0;
