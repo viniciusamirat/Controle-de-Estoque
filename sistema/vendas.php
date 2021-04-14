@@ -19,17 +19,17 @@
 
         $resultado1 = $venda->fetchAll();
 
-        $vendedor = $conexao->prepare("SELECT nome FROM vendas INNER JOIN vendedores ON vendas.id_vendedor = vendedores.id;");
+        $vendedor = $conexao->prepare("SELECT nome FROM vendedores INNER JOIN vendas ON vendedores.id = vendas.id_vendedor ORDER BY vendas.id;");
         $vendedor->execute();
 
         $resultado2 = $vendedor->fetchAll();
 
-        $cliente = $conexao->prepare("SELECT nome FROM vendas INNER JOIN clientes ON vendas.id_vendedor = clientes.id;");
+        $cliente = $conexao->prepare("SELECT nome FROM clientes INNER JOIN vendas ON clientes.id = vendas.id_cliente ORDER BY vendas.id;");
         $cliente->execute();
 
         $resultado3 = $cliente->fetchAll();
 
-        $produto = $conexao->prepare("SELECT produto FROM vendas INNER JOIN produtos ON vendas.id_vendedor = produtos.id;");
+        $produto = $conexao->prepare("SELECT produto FROM produtos INNER JOIN vendas ON produtos.id = vendas.id_produto ORDER BY vendas.id;");
         $produto->execute();
 
         $resultado4 = $produto->fetchAll();
@@ -75,7 +75,7 @@
                 <tbody>
                 <?php
                      if ($venda->rowCount() > 0){
-                        for ($c = 0;$c < count($resultado1);$c++){
+                        for ($c = count($resultado1)-1;$c >= 0;$c--){
                             echo "<tr>
                                     <td>".$resultado2[$c]['nome']."</td>
                                     <td>".$resultado3[$c]['nome']."</td>
@@ -88,22 +88,6 @@
                                 </tr>";
                         }
                     }
-
-
-
-/*
-                    if ($venda->rowCount() > 0){
-                        foreach ($resultado1 as $row){
-                            echo "<tr>
-                                    <td>".$row['id_vendedor']."</td>
-                                    <td>".$row['id_cliente']."</td>
-                                    <td>".$row['id_produto']."</td>
-                                    <td>".$row['quantidade']."</td>
-                                    <td>R$ ".$row['preco']."</td>
-                                    <td>".$row['data_venda']."</td>
-                                </tr>";
-                        }
-                    }*/
                 ?>
                 </tbody>
             </table>

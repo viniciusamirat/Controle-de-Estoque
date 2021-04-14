@@ -44,7 +44,7 @@
             $produtos = $conexao->prepare("SELECT produto FROM produtos");
             $produtos->execute();
 
-            $resuproduto = $produtos->fetchAll();
+            $resuProduto = $produtos->fetchAll();
 
             
             //Pesquisas que colocam os valores que vão ser editados no input
@@ -174,7 +174,7 @@
                 <input class="input-group" list="browsers3" name="produto" <?php echo "value='$nomeProduto'"?> placeholder="Produto" required><br>
                     <datalist id="browsers3">
                          <?php
-                            foreach ($resuproduto as $row){
+                            foreach ($resuProduto as $row){
                                 echo "<option value='".$row['produto']."'>";
                             }
                         ?>

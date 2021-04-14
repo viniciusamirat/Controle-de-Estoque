@@ -16,22 +16,25 @@
         include_once "php/conexao.php";
 
         try{
+            //Pesquisas para serem listadas no input
+
+            //Pesquisa o cpf dos vendedores
             $vendedores = $conexao->prepare("SELECT cpf FROM vendedores");
             $vendedores->execute();
 
             $resuVendedor = $vendedores->fetchAll();
 
-
+            //Pesquisa o cpf dos clientes
             $clientes = $conexao->prepare("SELECT cpf FROM clientes");
             $clientes->execute();
 
             $resuCliente = $clientes->fetchAll();
 
-
+            //Pesquisa o nome dos produtos
             $produtos = $conexao->prepare("SELECT produto FROM produtos");
             $produtos->execute();
 
-            $resuproduto = $produtos->fetchAll();
+            $resuProduto = $produtos->fetchAll();
         } catch (PDOException $e){
             echo "Error: " . $e->getMessage();
         }
@@ -81,7 +84,7 @@
                 <input class="input-group" list="browsers3" name="produto" placeholder="Produto" required><br>
                     <datalist id="browsers3">
                          <?php
-                            foreach ($resuproduto as $row){
+                            foreach ($resuProduto as $row){
                                 echo "<option value='".$row['produto']."'>";
                             }
                         ?>

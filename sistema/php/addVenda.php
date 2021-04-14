@@ -11,50 +11,61 @@
 
     try {
         //substituindo o cpf pelo id do vendedor
-        $comando1 = $conexao->prepare("SELECT id FROM vendedores WHERE cpf = '$vendedor'");
-        $comando1->execute();
+        $comando1 = $conexao->prepare("SELECT id FROM vendedores WHERE cpf = :cpf");
+        $comando1->execute(array(
+            ':cpf'=>$vendedor
+        ));
 
-        $resu1 = $comando1->fetchAll();
+        //$resu1 = $comando1->fetchAll();
 
-        foreach($resu1 as $row){
+        foreach($comando1->fetchAll() as $row){
             $vendedor = $row['id'];
         }
 
         //substituindo o cpf pelo id do cliente
-        $comando2 = $conexao->prepare("SELECT id FROM clientes WHERE cpf = '$cliente'");
-        $comando2->execute();
+        $comando2 = $conexao->prepare("SELECT id FROM clientes WHERE cpf = :cpf");
+        $comando2->execute(array(
+            ':cpf'=>$cliente
+        ));
 
-        $resu2 = $comando2->fetchAll();
+        //$resu2 = $comando2->fetchAll();
 
-        foreach($resu2 as $row){
+        foreach($comando2->fetchAll() as $row){
             $cliente = $row['id'];
         }
 
         //substituindo o nome do produto pelo id
-        $comando3 = $conexao->prepare("SELECT id FROM produtos WHERE produto = '$produto'");
-        $comando3->execute();
+        $comando3 = $conexao->prepare("SELECT id FROM produtos WHERE produto = :nome");
+        $comando3->execute(array(
+            ':nome'=>$produto
+        ));
 
-        $resu3 = $comando3->fetchAll();
+        //$resu3 = $comando3->fetchAll();
 
-        foreach($resu3 as $row){
+        foreach($comando3->fetchAll() as $row){
             $produto = $row['id'];
         }
 
         //procurando a quantidade existente do produto
-        $comando4 = $conexao->prepare("SELECT quantidade FROM produtos WHERE id = '$produto'");
-        $comando4->execute();
+        $comando4 = $conexao->prepare("SELECT quantidade FROM produtos WHERE id = :id");
+        $comando4->execute(array(
+            ':id'=>$produto
+        ));
 
-        $resu4 = $comando4->fetchAll();
+        //$resu4 = $comando4->fetchAll();
 
-        foreach($resu4 as $row){
+        foreach($comando4->fetchAll() as $row){
             $total = $row['quantidade'];
         }
 
         //Update na quantidade do produto
         $resto = $total - $quantidade;
 
-        $update = $conexao->prepare("UPDATE produtos SET quantidade = '$resto' WHERE id = '$produto'");
-        $update->execute();
+        $update = $conexao->prepare("UPDATE produtos SET quantidade = :resto WHERE id = :id");
+        $update->execute(array(
+            ':resto'=>$resto,
+            ':id'=>$produto
+        ));
 
         //inclusão
         $sql = $conexao->prepare("INSERT INTO vendas (id_vendedor, id_cliente, id_produto, quantidade, preco, data_venda) VALUES (:vendedor, :cliente, :produto, :quantidade, :preco, :data_venda);");
@@ -68,9 +79,9 @@
         ));
 
         if ($sql->rowCount() == 1){
-            echo "<script>alert('Gravado com sucesso!!');history.go(-1);</script>";
+            echo "<script>alert('Gravado com sucesso!!');history.go(-2);</script>";
         } else {
-            echo "<script>alert('Erro de gravação!!');history.go(-1);</script>;";
+            echo "<script>alert('Erro de gravação!!');history.go(-2);</script>;";
         }
     } catch (PDOException $e){
         echo "Error: " . $e->getMessage();
