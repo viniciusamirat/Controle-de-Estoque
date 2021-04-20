@@ -62,3 +62,8 @@ a:active {
     text-decoration: none;
     color: rgb(0, 216, 0);
 }
+
+th {
+    background-color: rgb(3, 3, 110);
+    color: white;
+}
