@@ -54,17 +54,17 @@
                   Mais
                 </button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="formProdutos.php">Adicionar Produtos</a>
-                  <a class="dropdown-item" href="formVendas.php">Adicionar Vendas</a>
-                  <a class="dropdown-item" href="formVendedores.php">Adicionar Vendedores</a>
-                  <a class="dropdown-item" href="formClientes.php">Adicionar Clientes</a>
+                  <a class="dropdown-item" href="formProdutos.php">Adicionar Produto</a>
+                  <a class="dropdown-item" href="formVendas.php">Adicionar Vendas/a>
+                  <a class="dropdown-item" href="formVendedores.php">Adicionar Vendedor</a>
+                  <a class="dropdown-item" href="formClientes.php">Adicionar Cliente</a>
                 </div>
             </div>
             <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
         </div>
         <div class="formulario">
         <form action="php/updateVendedor.php" method="POST">
-                <input class="input-group" type="text" name="vendedor" <?php echo "value='$nome'"?> placeholder="Nome do Cliente" maxlength="100" required autofocus><br>
+                <input class="input-group" type="text" name="vendedor" <?php echo "value='$nome'"?> placeholder="Nome do Cliente" maxlength="100" required><br>
                 <input class="input-group" type="text" name="cpf" <?php echo "value='$cpf'"?> placeholder="CPF" maxlength="14" required><br>
                 <input class="input-group" type="text" name="tel" <?php echo "value='$tel'"?> placeholder="Telefone" maxlength="15" required><br>
                 <input type="button" onclick="window.location.href='vendedores.php'" value="Cancelar" class="btn btn-danger">

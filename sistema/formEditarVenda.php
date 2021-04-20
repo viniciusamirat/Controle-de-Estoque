@@ -145,17 +145,17 @@
                   Mais
                 </button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="formProdutos.php">Adicionar Produtos</a>
-                  <a class="dropdown-item" href="formVendas.php">Adicionar Vendas</a>
-                  <a class="dropdown-item" href="formVendedores.php">Adicionar Vendedores</a>
-                  <a class="dropdown-item" href="formClientes.php">Adicionar Clientes</a>
+                  <a class="dropdown-item" href="formProdutos.php">Adicionar Produto</a>
+                  <a class="dropdown-item" href="formVendas.php">Adicionar Venda</a>
+                  <a class="dropdown-item" href="formVendedores.php">Adicionar Vendedor</a>
+                  <a class="dropdown-item" href="formClientes.php">Adicionar Cliente</a>
                 </div>
             </div>
             <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
         </div>
         <div class="formulario">
             <form method="POST" action="php/updateVenda.php">
-                <input class="input-group" list="browsers1" name="vendedor" <?php echo "value='$cpfVendedor'"?> placeholder="CPF do Vendedor" required autofocus><br>
+                <input class="input-group" list="browsers1" name="vendedor" <?php echo "value='$cpfVendedor'"?> placeholder="CPF do Vendedor" required><br>
                     <datalist id="browsers1">
                         <?php
                             foreach ($resuVendedor as $row){

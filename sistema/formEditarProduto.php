@@ -84,17 +84,17 @@
                   Mais
                 </button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="formProdutos.php">Adicionar Produtos</a>
-                  <a class="dropdown-item" href="formVendas.php">Adicionar Vendas</a>
-                  <a class="dropdown-item" href="formVendedores.php">Adicionar Vendedores</a>
-                  <a class="dropdown-item" href="formClientes.php">Adicionar Clientes</a>
+                  <a class="dropdown-item" href="formProdutos.php">Adicionar Produto</a>
+                  <a class="dropdown-item" href="formVendas.php">Adicionar Venda</a>
+                  <a class="dropdown-item" href="formVendedores.php">Adicionar Vendedor</a>
+                  <a class="dropdown-item" href="formClientes.php">Adicionar Cliente</a>
                 </div>
             </div>
             <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
         </div>
         <div class="formulario">
         <form action="php/updateProduto.php" method="POST">
-                <input class="input-group" type="text" name="produto" <?php echo "value='$produto'"?> placeholder="Nome do Produto" maxlength="100" required autofocus><br>
+                <input class="input-group" type="text" name="produto" <?php echo "value='$produto'"?> placeholder="Nome do Produto" maxlength="100" required><br>
                 <input class="input-group" type="text" name="marca" <?php echo "value='$marca'"?> placeholder="Marca" maxlength="50" required><br>
                 <input class="input-group" type="number" step="0.01" name="preco" <?php echo "value='$preco'"?> min=0 placeholder="Preço" required><br>
                 <input class="input-group" type="number" name="quantidade" <?php echo "value='$quantidade'"?> min=1 placeholder="Quantidade em estoque" required><br>
