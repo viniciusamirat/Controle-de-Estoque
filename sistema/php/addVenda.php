@@ -58,31 +58,38 @@
             $total = $row['quantidade'];
         }
 
-        //Update na quantidade do produto
-        $resto = $total - $quantidade;
-
-        $update = $conexao->prepare("UPDATE produtos SET quantidade = :resto WHERE id = :id");
-        $update->execute(array(
-            ':resto'=>$resto,
-            ':id'=>$produto
-        ));
-
-        //inclusão
-        $sql = $conexao->prepare("INSERT INTO vendas (id_vendedor, id_cliente, id_produto, quantidade, preco, data_venda) VALUES (:vendedor, :cliente, :produto, :quantidade, :preco, :data_venda);");
-        $sql->execute(array(
-            ':vendedor'=>$vendedor,
-            ':cliente'=>$cliente,
-            ':produto'=>$produto,
-            ':quantidade'=>$quantidade,
-            ':preco'=>$preco,
-            ':data_venda'=>$data
-        ));
-
-        if ($sql->rowCount() == 1){
-            echo "<script>alert('Gravado com sucesso!!');history.go(-2);</script>";
+        //Verificando se a quantidade inserida existe no estoque
+        if ($quantidade > $total){
+            echo "<script>alert('A quantidade inserida é maior do que a quantidade existente no estoque!');history.go(-1);</script>";
         } else {
-            echo "<script>alert('Erro de gravação!!');history.go(-2);</script>;";
+            //Update na quantidade do produto
+            $resto = $total - $quantidade;
+
+            $update = $conexao->prepare("UPDATE produtos SET quantidade = :resto WHERE id = :id");
+            $update->execute(array(
+                ':resto'=>$resto,
+                ':id'=>$produto
+            ));
+
+            //inclusão
+            $sql = $conexao->prepare("INSERT INTO vendas (id_vendedor, id_cliente, id_produto, quantidade, preco, data_venda) VALUES (:vendedor, :cliente, :produto, :quantidade, :preco, :data_venda);");
+            $sql->execute(array(
+                ':vendedor'=>$vendedor,
+                ':cliente'=>$cliente,
+                ':produto'=>$produto,
+                ':quantidade'=>$quantidade,
+                ':preco'=>$preco,
+                ':data_venda'=>$data
+            ));
+
+            if ($sql->rowCount() == 1){
+                echo "<script>alert('Gravado com sucesso!!');history.go(-2);</script>";
+            } else {
+                echo "<script>alert('Erro de gravação!!');history.go(-2);</script>;";
+            }
         }
+
+        
     } catch (PDOException $e){
         echo "Error: " . $e->getMessage();
     }
