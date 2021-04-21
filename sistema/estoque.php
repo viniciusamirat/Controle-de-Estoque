@@ -22,16 +22,19 @@
 </head>
 <body>
     <div>
+        <div class="right">
+            <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
+        </div>
         <div class="container-fluid centralizar cabecalho">
             <h1>Estoque</h1>
         </div>
         <div class="container-fluid centralizar">
-            <button type="button" class="btn btn-outline-success" onclick="window.location.href='estoque.php'" name="estoque">Estoque</button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='vendas.php'" name="vendas">Vendas</button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='vendedores.php'" name="vendedores">Vendedores</button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='clientes.php'" name="clientes">Clientes</button>
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='estoque.php'" name="estoque">Estoque</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='vendas.php'" name="vendas">Vendas</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='vendedores.php'" name="vendedores">Vendedores</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='clientes.php'" name="clientes">Clientes</button>
             <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Mais
                 </button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -41,19 +44,18 @@
                   <a class="dropdown-item" href="formClientes.php">Adicionar Cliente</a>
                 </div>
             </div>
-            <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
         </div>
 
         <div class="tabela">
             <table  class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Produto</th>
+                        <th class="esquerda">Produto</th>
                         <th>Marca</th>
                         <th>Preço</th>
                         <th>Quantidade em estoque</th>
                         <th></th>
-                        <th></th>
+                        <th class="direita"></th>
                     </tr>
                 </thead>
                 <tbody>

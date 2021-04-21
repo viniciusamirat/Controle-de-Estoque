@@ -41,16 +41,19 @@
 </head>
 <body>
     <div>
+        <div class="right">
+            <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
+        </div>
         <div class="container-fluid centralizar cabecalho">
             <h1>Editar Cliente</h1>
         </div>
         <div class="container-fluid centralizar">
-            <button type="button" class="btn btn-success" onclick="window.location.href='estoque.php'" name="estoque">Estoque</button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='vendas.php'" name="vendas">Vendas</button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='vendedores.php'" name="vendedores">Vendedores</button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='clientes.php'" name="clientes">Clientes</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='estoque.php'" name="estoque">Estoque</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='vendas.php'" name="vendas">Vendas</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='vendedores.php'" name="vendedores">Vendedores</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='clientes.php'" name="clientes">Clientes</button>
             <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Mais
                 </button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -60,7 +63,6 @@
                   <a class="dropdown-item" href="formClientes.php">Adicionar Cliente</a>
                 </div>
             </div>
-            <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
         </div>
         <div class="formulario">
         <form action="php/updateCliente.php" method="POST">
@@ -68,7 +70,7 @@
                 <input class="input-group" type="text" name="cpf" <?php echo "value='$cpf'"?> placeholder="CPF" maxlength="14" required><br>
                 <input class="input-group" type="text" name="tel" <?php echo "value='$tel'"?> placeholder="Telefone" maxlength="15" required><br>
                 <input type="button" onclick="window.location.href='clientes.php'" value="Cancelar" class="btn btn-danger">
-                <input type="submit" value="Aplicar mudanças" class="btn btn-success">
+                <input type="submit" value="Aplicar mudanças" class="btn btn-primary">
             </form>
         </div>
     </div>

@@ -45,25 +45,29 @@
 
 a:link {
     text-decoration: none;
-    color: green;
+    color: blue;
 }
 
 a:visited {
     text-decoration: none;
-    color: green;
+    color: blue;
 }
 
-a:hover {
-    text-decoration: none;
-    color: rgb(0, 216, 0);
-}
-
-a:active {
-    text-decoration: none;
-    color: rgb(0, 216, 0);
-}
-
-th {
+thead {
     background-color: rgb(3, 3, 110);
     color: white;
 }
+
+th.esquerda {
+    border-top-left-radius: 10px;
+}
+
+th.direita {
+    border-top-right-radius: 10px;
+}
+
+.right{
+    position: absolute;
+    right: 0px;
+    padding: 10px;
+  }

@@ -16,16 +16,19 @@
 </head>
 <body>
     <div>
+        <div class="right">
+            <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
+        </div>
         <div class="container-fluid centralizar cabecalho">
             <h1>Adicionar Vendedor</h1>
         </div>
         <div class="container-fluid centralizar">
-            <button type="button" class="btn btn-success" onclick="window.location.href='estoque.php'" name="estoque">Estoque</button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='vendas.php'" name="vendas">Vendas</button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='vendedores.php'" name="vendedores">Vendedores</button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='clientes.php'" name="clientes">Clientes</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='estoque.php'" name="estoque">Estoque</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='vendas.php'" name="vendas">Vendas</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='vendedores.php'" name="vendedores">Vendedores</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='clientes.php'" name="clientes">Clientes</button>
             <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Mais
                 </button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -35,7 +38,6 @@
                   <a class="dropdown-item" href="formClientes.php">Adicionar Cliente</a>
                 </div>
             </div>
-            <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
         </div>
         <div class="formulario">
             <form method="POST" action="php/addVendedor.php">
@@ -43,7 +45,7 @@
                 <input class="input-group" type="text" name="cpf" placeholder="CPF" maxlength="14" required><br>
                 <input class="input-group" type="text" name="tel" placeholder="Telefone" maxlength="15" required><br>
                 <input type="reset" value="Limpar" class="btn btn-danger">
-                <input type="submit" value="Adicionar" class="btn btn-success">
+                <input type="submit" value="Adicionar" class="btn btn-primary">
             </form>
         </div>
     </div>
