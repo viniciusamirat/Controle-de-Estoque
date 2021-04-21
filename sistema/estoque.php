@@ -23,6 +23,8 @@
 <body>
     <div>
         <div class="right">
+            Logado como <strong><?php echo $_SESSION['usuario']?></strong>
+            
             <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
         </div>
         <div class="container-fluid centralizar cabecalho">
