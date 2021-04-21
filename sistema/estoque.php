@@ -14,10 +14,17 @@
         include_once "php/autenticacao.php";
 
         include_once "php/conexao.php";
-        $comando = $conexao->prepare("SELECT * FROM produtos");
-        $comando->execute();
+        //Pesquisa o registro do produto
+        $estoque = $conexao->prepare("SELECT * FROM produtos");
+        $estoque->execute();
 
-        $resultado = $comando->fetchAll();
+        $resultado1 = $estoque->fetchAll();
+
+        //Pesquisa o nome do fornecedor
+        $fornecedor = $conexao->prepare("SELECT nome FROM fornecedores INNER JOIN produtos ON fornecedores.id = produtos.fornecedor ORDER BY produtos.id");
+        $fornecedor->execute();
+
+        $resultado2 = $fornecedor->fetchAll();
     ?>
 </head>
 <body>
@@ -55,6 +62,7 @@
                         <th class="esquerda">Produto</th>
                         <th>Marca</th>
                         <th>Preço</th>
+                        <th>Fornecedor</th>
                         <th>Quantidade em estoque</th>
                         <th></th>
                         <th class="direita"></th>
@@ -62,15 +70,16 @@
                 </thead>
                 <tbody>
                 <?php
-                    if ($comando->rowCount() > 0){
-                        foreach ($resultado as $row){
+                    if ($estoque->rowCount() > 0){
+                        for ($c = count($resultado1)-1; $c >= 0; $c--){
                             echo "<tr>
-                                    <td>".$row['produto']."</td>
-                                    <td>".$row['marca']."</td>
-                                    <td>R$ ".$row['preco']."</td>
-                                    <td>".$row['quantidade']."</td>
-                                    <td><a href='formEditarProduto.php?id=".$row['id']."'>Editar</a></td>
-                                    <td><a href='php/excluirProduto.php?id=".$row['id']."'>Excluir</a></td>
+                                    <td>".$resultado1[$c]['produto']."</td>
+                                    <td>".$resultado1[$c]['marca']."</td>
+                                    <td>R$ ".$resultado1[$c]['preco']."</td>
+                                    <td>".$resultado2[$c]['nome']."</td>
+                                    <td>".$resultado1[$c]['quantidade']."</td>
+                                    <td><a href='formEditarProduto.php?id=".$resultado1[$c]['id']."'>Editar</a></td>
+                                    <td><a href='php/excluirProduto.php?id=".$resultado1[$c]['id']."'>Excluir</a></td>
                                 </tr>";
                         }
                     }
