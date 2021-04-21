@@ -136,7 +136,7 @@
         <form action="php/updateProduto.php" method="POST">
                 <input class="input-group" type="text" name="produto" <?php echo "value='$produto'"?> placeholder="Nome do Produto" maxlength="100" required><br>
                 <input class="input-group" type="text" name="marca" <?php echo "value='$marca'"?> placeholder="Marca" maxlength="50" required><br>
-                <input class="input-group" list="lista" type="text" name="fornecedor "<?php echo "value='$fornecedorNome'"?> placeholder="Fornecedor" maxlength="100" required><br>
+                <input class="input-group" list="lista" type="text" name="fornecedor"<?php echo "value='$fornecedorNome'"?> placeholder="Fornecedor" maxlength="100" required><br>
                     <datalist id="lista">
                         <?php
                             foreach ($resuPesquisa as $row){
