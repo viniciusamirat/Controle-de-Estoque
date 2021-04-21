@@ -3,8 +3,10 @@ include_once "conexao.php";
 
 $produto = $_POST['produto'];
 $marca = $_POST['marca'];
+$fornecedor = $_POST['fornecedor'];
+$preco_compra = $_POST['preco_compra'];
 $preco = $_POST['preco'];
-$quantiade = $_POST['quantidade'];
+$quantidade = $_POST['quantidade'];
 
 try {
     $pesquisa = $conexao->prepare("SELECT produto FROM produtos WHERE produto = :produto");
@@ -16,12 +18,25 @@ try {
         echo "<script>alert('Insira o nome de um produto que não exista!');history.go(-1);</script>";
 
     } else {
-        $comando = $conexao->prepare("INSERT INTO produtos (produto, marca, preco, quantidade) VALUES (:produto, :marca, :preco, :quantidade);");
+        //Pesquisa o id do fornecedor
+        $pesquisaFornecedor = $conexao->prepare("SELECT id FROM fornecedores WHERE nome = :nome");
+        $pesquisaFornecedor->execute(array(
+            ':nome'=>$fornecedor
+        ));
+
+        foreach ($pesquisaFornecedor->fetchAll() as $row){
+            $fornecedor = $row['id'];
+        }
+
+        //Grava a venda
+        $comando = $conexao->prepare("INSERT INTO produtos (produto, marca, fornecedor, preco_compra, preco, quantidade) VALUES (:produto, :marca,:fornecedor, :preco_compra, :preco, :quantidade);");
         $comando->execute(array(
             ':produto'=>$produto,
             ':marca'=>$marca,
+            ':fornecedor'=>$fornecedor,
+            ':preco_compra'=>$preco_compra,
             ':preco'=>$preco,
-            ':quantidade'=>$quantiade
+            ':quantidade'=>$quantidade
         ));
 
         if ($comando->rowCount() == 1){
