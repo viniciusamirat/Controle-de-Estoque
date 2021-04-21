@@ -19,10 +19,19 @@
         $_SESSION['produto'] = $id;
         $produto;
         $marca;
+        $fornecedorId;
+        $fornecedorNome;
+        $preco_compra;
         $preco;
         $quantidade;
 
         try{
+            //Pequisa dos nomes de vendedores para as opções de input
+            $pesquisa = $conexao->prepare("SELECT nome FROM fornecedores");
+            $pesquisa->execute();
+
+            $resuPesquisa = $pesquisa->fetchAll();
+
             //Pesquisas que colocam os valores que vão ser editados no input
 
             //Pesquisa o nome do produto
@@ -45,7 +54,36 @@
                 $marca = $row['marca'];
             }
 
-            //Pesquisa p preço do produto
+            //pesquisa o id do fornecedor
+            $pesquisaFornecedorId = $conexao->prepare("SELECT fornecedor FROM produtos WHERE id = :id");
+            $pesquisaFornecedorId->execute(array(
+                ':id'=>$id
+            ));
+
+            foreach($pesquisaFornecedorId->fetchAll() as $row){
+                $fornecedorId = $row['fornecedor'];
+            }
+
+            //pesquisa o nome do fornecedor
+            $pesquisaFornecedorNome = $conexao->prepare("SELECT nome FROM fornecedores WHERE id = :id");
+            $pesquisaFornecedorNome->execute(array(
+                ':id'=>$fornecedorId
+            ));
+
+            foreach ($pesquisaFornecedorNome->fetchAll() as $row){
+                $fornecedorNome = $row['nome'];
+            }
+            //Pesquisa o preço da compra
+            $pesquisaCompra = $conexao->prepare("SELECT preco_compra FROM produtos WHERE id = :id");
+            $pesquisaCompra->execute(array(
+                ':id'=>$id
+            ));
+
+            foreach($pesquisaCompra->fetchAll() as $row){
+                $preco_compra = $row['preco_compra'];
+            }
+
+            //Pesquisa o preço de venda do produto
             $pesquisaPreco = $conexao->prepare("SELECT preco FROM produtos WHERE id = :id");
             $pesquisaPreco->execute(array(
                 ':id'=>$id
@@ -98,7 +136,16 @@
         <form action="php/updateProduto.php" method="POST">
                 <input class="input-group" type="text" name="produto" <?php echo "value='$produto'"?> placeholder="Nome do Produto" maxlength="100" required><br>
                 <input class="input-group" type="text" name="marca" <?php echo "value='$marca'"?> placeholder="Marca" maxlength="50" required><br>
-                <input class="input-group" type="number" step="0.01" name="preco" <?php echo "value='$preco'"?> min=0 placeholder="Preço" required><br>
+                <input class="input-group" list="lista" type="text" name="fornecedor "<?php echo "value='$fornecedorNome'"?> placeholder="Fornecedor" maxlength="100" required><br>
+                    <datalist id="lista">
+                        <?php
+                            foreach ($resuPesquisa as $row){
+                                echo "<option value='".$row['nome']."'>";
+                            }
+                        ?>
+                    </datalist>
+                <input class="input-group" type="number" step="0.01" name="preco_compra" <?php echo "value='$preco_compra'"?> placeholder="Preço da compra" required><br>
+                <input class="input-group" type="number" step="0.01" name="preco" <?php echo "value='$preco'"?> min=0 placeholder="Preço de venda" required><br>
                 <input class="input-group" type="number" name="quantidade" <?php echo "value='$quantidade'"?> min=1 placeholder="Quantidade em estoque" required><br>
                 <input type="button" onclick="window.location.href='estoque.php'" value="Cancelar" class="btn btn-danger">
                 <input type="submit" value="Aplicar mudanças" class="btn btn-primary">
