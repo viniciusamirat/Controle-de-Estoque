@@ -61,8 +61,8 @@
                     <tr>
                         <th class="esquerda">Produto</th>
                         <th>Marca</th>
-                        <th>Preço</th>
                         <th>Fornecedor</th>
+                        <th>Preço</th>
                         <th>Quantidade em estoque</th>
                         <th></th>
                         <th class="direita"></th>
@@ -75,8 +75,8 @@
                             echo "<tr>
                                     <td>".$resultado1[$c]['produto']."</td>
                                     <td>".$resultado1[$c]['marca']."</td>
-                                    <td>R$ ".$resultado1[$c]['preco']."</td>
                                     <td>".$resultado2[$c]['nome']."</td>
+                                    <td>R$ ".$resultado1[$c]['preco']."</td>
                                     <td>".$resultado1[$c]['quantidade']."</td>
                                     <td><a href='formEditarProduto.php?id=".$resultado1[$c]['id']."'>Editar</a></td>
                                     <td><a href='php/excluirProduto.php?id=".$resultado1[$c]['id']."'>Excluir</a></td>
