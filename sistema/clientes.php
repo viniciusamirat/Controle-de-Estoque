@@ -61,13 +61,13 @@
                 <tbody>
                     <?php
                         if ($comando->rowCount() > 0){
-                            foreach ($resultado as $row){
+                            for ($c = count($resultado)-1; $c >= 0; $c--){
                                 echo "<tr>
-                                        <td>".$row['nome']."</td>
-                                        <td>".$row['cpf']."</td>
-                                        <td>".$row['telefone']."</td>
-                                        <td><a href='formEditarCliente.php?id=".$row['id']."'>Editar</a></td>
-                                        <td><a href='php/excluirCliente.php?id=".$row['id']."'>Excluir</a></td>
+                                        <td>".$resultado[$c]['nome']."</td>
+                                        <td>".$resultado[$c]['cpf']."</td>
+                                        <td>".$resultado[$c]['telefone']."</td>
+                                        <td><a href='formEditarCliente.php?id=".$resultado[$c]['id']."'>Editar</a></td>
+                                        <td><a href='php/excluirCliente.php?id=".$resultado[$c]['id']."'>Excluir</a></td>
                                     </tr>";
                             }
                         }
