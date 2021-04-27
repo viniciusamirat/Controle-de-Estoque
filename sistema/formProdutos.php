@@ -37,6 +37,7 @@
             <button type="button" class="btn btn-primary" onclick="window.location.href='vendas.php'" name="vendas">Vendas</button>
             <button type="button" class="btn btn-primary" onclick="window.location.href='vendedores.php'" name="vendedores">Vendedores</button>
             <button type="button" class="btn btn-primary" onclick="window.location.href='clientes.php'" name="clientes">Clientes</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='fornecedores.php'" name="fornecedores">Fornecedores</button>
             <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Mais
@@ -46,6 +47,7 @@
                   <a class="dropdown-item" href="formVendas.php">Adicionar Venda</a>
                   <a class="dropdown-item" href="formVendedores.php">Adicionar Vendedor</a>
                   <a class="dropdown-item" href="formClientes.php">Adicionar Cliente</a>
+                  <a class="dropdown-item" href="formFornecedores.php">Adicionar Fornecedor</a>
                 </div>
             </div>
         </div>
