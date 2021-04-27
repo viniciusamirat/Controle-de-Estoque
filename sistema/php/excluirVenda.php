@@ -11,9 +11,9 @@
         ));
 
         if ($excluir->rowCount() == 1){
-            echo "<script>alert('Venda excluida!');history.go(-1);</script>";
+            echo "<script>alert('Excluido com sucesso!');history.go(-1);</script>";
         } else {
-            echo "<script>alert('Erro de exclusão');history.go(-1);</script>";
+            echo "<script>alert('Erro ao excluir registro!');history.go(-1);</script>";
         }
     } catch (PDOException $e){
         echo "Error: ". $e->getMessage();
