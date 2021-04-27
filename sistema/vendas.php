@@ -85,7 +85,7 @@
                                     <td>".$resultado3[$c]['nome']."</td>
                                     <td>".$resultado4[$c]['produto']."</td>
                                     <td>".$resultado1[$c]['quantidade']."</td>
-                                    <td>R$ ".$resultado1[$c]['preco']."</td>
+                                    <td>R$ ".number_format($resultado1[$c]['preco'], 2, ',', '.')."</td>
                                     <td>".date('d/m/Y', strtotime($resultado1[$c]['data_venda']))."</td>
                                     <td><a href='formEditarVenda.php?id=".$resultado1[$c]['id']."'>Editar</a></td>
                                     <td><a href='php/excluirVenda.php?id=".$resultado1[$c]['id']."'>Excluir</a></td>
