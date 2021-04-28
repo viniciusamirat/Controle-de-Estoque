@@ -43,10 +43,16 @@
         </div>
         <div class="formulario">
             <form action="php/addFornecedor.php" method="POST">
-                <input class="input-group" type="text" name="fornecedor" placeholder="Nome do Fornecedor" maxlength="100" required autofocus><br>
-                <input class="input-group" type="text" name="produtos" placeholder="Produtos" maxlength="1000" required><br>
-                <input class="input-group" type="text" name="email" placeholder="Email" maxlength="100" required><br>
-                <input class="input-group" type="text" name="tel" placeholder="Telefone" maxlength="15" required><br>
+                <label class="rotulo" for="fornecedor"><strong>Nome do fornecedor:</strong></label>
+                <input class="input-group" type="text" id="fornecedor" name="fornecedor" maxlength="100" required autofocus><br>
+                <label class="rotulo" for="produtos"><strong>Produtos fornecidos:</strong></label>
+                <input class="input-group" type="text" id="produtos" name="produtos" maxlength="1000" required><br>
+                <label class="rotulo" for="email"><strong>Email do fornecedor:</strong></label>
+                <input class="input-group" type="text" id="email" name="email" maxlength="100" required><br>
+                <label class="rotulo" for="tel"><strong>Telefone do fornecedor:</strong></label>
+                <input class="input-group" type="text" id="tel" name="tel" maxlength="15" required><br>
+                <label class="rotulo" for="data"><strong>Data de cadastro:</strong></label>
+                <input class="input-group" type="date" id="data" name="data" required><br>
                 <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-primary">
             </form>
