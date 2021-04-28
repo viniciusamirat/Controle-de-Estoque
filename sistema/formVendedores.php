@@ -43,9 +43,16 @@
         </div>
         <div class="formulario">
             <form method="POST" action="php/addVendedor.php">
-                <input class="input-group" type="text" name="vendedor" placeholder="Nome do Vendedor" maxlength="100" required autofocus><br>
-                <input class="input-group" type="text" name="cpf" placeholder="CPF" maxlength="14" required><br>
-                <input class="input-group" type="text" name="tel" placeholder="Telefone" maxlength="15" required><br>
+                <label class="rotulo" for="vendedor"><strong>Nome do vendedor:</strong></label>
+                <input class="input-group" type="text" id="vendedor" name="vendedor" maxlength="100" required autofocus><br>
+                <label class="rotulo" for="cpf"><strong>CPF do vendedor:</strong></label>
+                <input class="input-group" type="text" id="cpf" name="cpf" maxlength="14" required><br>
+                <label class="rotulo" for="tel"><strong>Telefone do vendedor:</strong></label>
+                <input class="input-group" type="text" id="tel" name="tel" maxlength="15" required><br>
+                <label class="rotulo" for="email"><strong>Email do vendedor:</strong></label>
+                <input class="input-group" type="text" id="email" name="email" maxlength="100" required><br>
+                <label class="rotulo" for="data"><strong>Data de admissão:</strong></label>
+                <input class="input-group" type="date" id="data" name="data" required><br>
                 <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-primary">
             </form>
