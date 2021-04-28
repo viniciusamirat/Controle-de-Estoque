@@ -43,9 +43,16 @@
         </div>
         <div class="formulario">
             <form action="php/addCliente.php" method="POST">
-                <input class="input-group" type="text" name="cliente" placeholder="Nome do Cliente" maxlength="100" required autofocus><br>
-                <input class="input-group" type="text" name="cpf" placeholder="CPF" maxlength="14" required><br>
-                <input class="input-group" type="text" name="tel" placeholder="Telefone" maxlength="15" required><br>
+                <label class="rotulo" for="cliente"><strong>Nome do cliente:</strong></label>
+                <input class="input-group" type="text" id="cliente" name="cliente" maxlength="100" required autofocus><br>
+                <label for="cpf"><strong>CPF do cliente:</strong></label>
+                <input class="input-group" type="text" id="cpf" name="cpf" maxlength="14" required><br>
+                <label for="tel"><strong>Telefone do cliente:</strong></label>
+                <input class="input-group" type="text" id="tel" name="tel"  maxlength="15" required><br>
+                <label for="email"><strong>Email do cliente:</strong></label>
+                <input class="input-group" type="text" id="email" name="email" maxlength="100" required><br>
+                <label for="data"><strong>Data de cadastro:</strong></label>
+                <input class="input-group" type="date" id="data" name="data" required><br>
                 <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-primary">
             </form>
