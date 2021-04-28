@@ -6,13 +6,15 @@
     $nome = $_POST['cliente'];
     $cpf = $_POST['cpf'];
     $tel = $_POST['tel'];
+    $email = $_POST['email'];
 
     try {
-        $comando = $conexao->prepare("UPDATE clientes SET nome = :nome, cpf = :cpf, telefone = :tel WHERE id = :id");
+        $comando = $conexao->prepare("UPDATE clientes SET nome = :nome, cpf = :cpf, telefone = :tel, email = :email WHERE id = :id");
         $comando->execute(array(
             ':nome'=>$nome,
             ':cpf'=>$cpf,
             ':tel'=>$tel,
+            ':email'=>$email,
             ':id'=>$id
         ));
 

@@ -20,6 +20,7 @@
         $nome;
         $cpf;
         $tel;
+        $email;
 
         try{
             //Pesquisa as informações da pessoa para colocar os valores no input
@@ -32,6 +33,7 @@
                 $nome = $row['nome'];
                 $cpf = $row['cpf'];
                 $tel = $row['telefone'];
+                $email = $row['email'];
             }
             
         } catch (PDOException $e){
@@ -67,10 +69,15 @@
             </div>
         </div>
         <div class="formulario">
-        <form action="php/updateCliente.php" method="POST">
-                <input class="input-group" type="text" name="cliente" <?php echo "value='$nome'"?> placeholder="Nome do Cliente" maxlength="100" required><br>
-                <input class="input-group" type="text" name="cpf" <?php echo "value='$cpf'"?> placeholder="CPF" maxlength="14" required><br>
-                <input class="input-group" type="text" name="tel" <?php echo "value='$tel'"?> placeholder="Telefone" maxlength="15" required><br>
+            <form action="php/updateCliente.php" method="POST">
+                <label class="rotulo" for="cliente"><strong>Nome do cliente:</strong></label>
+                <input class="input-group" type="text" id="cliente" name="cliente" <?php echo "value='$nome'"?> maxlength="100" required><br>
+                <label for="cpf"><strong>CPF do cliente:</strong></label>
+                <input class="input-group" type="text" id="cpf" name="cpf" <?php echo "value='$cpf'"?> maxlength="14" required><br>
+                <label for="tel"><strong>Telefone do cliente:</strong></label>
+                <input class="input-group" type="text" id="tel" name="tel" <?php echo "value='$tel'"?>  maxlength="15" required><br>
+                <label for="email"><strong>Email do cliente:</strong></label>
+                <input class="input-group" type="text" id="email" name="email" <?php echo "value='$email'"?> maxlength="100" required><br>
                 <input type="button" onclick="window.location.href='clientes.php'" value="Cancelar" class="btn btn-danger">
                 <input type="submit" value="Aplicar mudanças" class="btn btn-primary">
             </form>
