@@ -66,8 +66,17 @@ th.direita {
     border-top-right-radius: 10px;
 }
 
+th.ambas{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
 .right{
     position: absolute;
     right: 0px;
     padding: 10px;
   }
+
+label.rotulo {
+    text-align: left;
+}
