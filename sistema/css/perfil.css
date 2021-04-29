@@ -1,0 +1,32 @@
+.foto {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+
+.fotocenter{
+    text-align: center;
+}
+
+.excluir {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.editar{
+    margin-left: auto;
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+.retornar {
+    padding: 10px;
+}
+
+td{
+    text-align: left;
+}
+
+.rodape{
+    display: flex;
+}
