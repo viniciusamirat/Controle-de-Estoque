@@ -16,7 +16,7 @@
         include_once "php/conexao.php";
 
         $id = $_GET['id'];
-        $_SESSION['editar'] = $id;
+        $_SESSION['mais'] = $id;
         $nome;
         $produtos;
         $email;

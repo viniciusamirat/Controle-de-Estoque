@@ -2,7 +2,7 @@
     include_once "conexao.php";
 
     session_start();
-    $id = $_SESSION['editar'];
+    $id = $_SESSION['mais'];
     $nome = $_POST['vendedor'];
     $cpf = $_POST['cpf'];
     $tel = $_POST['tel'];

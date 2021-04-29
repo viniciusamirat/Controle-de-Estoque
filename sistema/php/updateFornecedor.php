@@ -2,7 +2,7 @@
     include_once "conexao.php";
 
     session_start();
-    $id = $_SESSION['editar'];
+    $id = $_SESSION['mais'];
 
     $fornecedor = $_POST['fornecedor'];
     $produtos = $_POST['produtos'];
