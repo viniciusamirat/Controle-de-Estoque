@@ -69,11 +69,15 @@
             </div>
         </div>
         <div class="formulario">
-        <form action="php/updateFornecedor.php" method="POST">
-                <input class="input-group" type="text" name="fornecedor" <?php echo "value='$nome'"?> placeholder="Nome do Fornecedor" maxlength="100" required><br>
-                <input class="input-group" type="text" name="produtos" <?php echo "value='$produtos'"?> placeholder="Produtos" maxlength="1000" required><br>
-                <input class="input-group" type="text" name="email" <?php echo "value='$email'"?> placeholder="Email" maxlength="100" required><br>
-                <input class="input-group" type="text" name="tel" <?php echo "value='$tel'"?> placeholder="Telefone" maxlength="15" required><br>
+            <form action="php/updateFornecedor.php" method="POST">
+                <label class="rotulo" for="fornecedor"><strong>Nome do fornecedor:</strong></label>
+                <input class="input-group" type="text" id="fornecedor" name="fornecedor" <?php echo "value='$nome'"?> maxlength="100" required autofocus><br>
+                <label class="rotulo" for="produtos"><strong>Produtos fornecidos:</strong></label>
+                <input class="input-group" type="text" id="produtos" name="produtos" <?php echo "value='$produtos'"?> maxlength="1000" required><br>
+                <label class="rotulo" for="email"><strong>Email do fornecedor:</strong></label>
+                <input class="input-group" type="text" id="email" name="email" <?php echo "value='$email'"?> maxlength="100" required><br>
+                <label class="rotulo" for="tel"><strong>Telefone do fornecedor:</strong></label>
+                <input class="input-group" type="text" id="tel" name="tel" <?php echo "value='$tel'"?> maxlength="15" required><br>
                 <input type="button" onclick="window.location.href='fornecedores.php'" value="Cancelar" class="btn btn-danger">
                 <input type="submit" value="Aplicar mudanças" class="btn btn-primary">
             </form>

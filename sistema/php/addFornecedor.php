@@ -5,14 +5,16 @@
     $produtos = $_POST['produtos'];
     $email = $_POST['email'];
     $tel = $_POST['tel'];
+    $data = $_POST['data'];
 
     try {
-        $insert = $conexao->prepare("INSERT INTO fornecedores (nome, produtos, email, telefone) VALUES (:nome, :produtos, :email, :tel)");
+        $insert = $conexao->prepare("INSERT INTO fornecedores (nome, produtos, email, telefone, data_cadastro) VALUES (:nome, :produtos, :email, :tel, :data_cadastro)");
         $insert->execute(array(
             ':nome'=>$fornecedor,
             ':produtos'=>$produtos,
             ':email'=>$email,
-            ':tel'=>$tel
+            ':tel'=>$tel,
+            ':data_cadastro'=>$data
         ));
 
         if ($insert->rowCount() == 1){
