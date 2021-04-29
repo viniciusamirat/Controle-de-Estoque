@@ -56,7 +56,7 @@
                         <th>CPF</th>
                         <th>Telefone</th>
                         <th>Email</th>
-                        <th>admissão</th>
+                        <th>Admissão</th>
                         <th></th>
                         <th class="direita"></th>
                     </tr>
