@@ -58,7 +58,6 @@
                         <th>Email</th>
                         <th>Telefone</th>
                         <th>Cadastro</th>
-                        <th></th>
                         <th class="direita"></th>
                     </tr>
                 </thead>
@@ -72,8 +71,7 @@
                                         <td>".$resultado[$c]['email']."</td>
                                         <td>".$resultado[$c]['telefone']."</td>
                                         <td>".date('d/m/Y', strtotime($resultado[$c]['data_cadastro']))."</td>
-                                        <td><a href='formEditarFornecedor.php?id=".$resultado[$c]['id']."'>Editar</a></td>
-                                        <td><a href='php/excluirFornecedor.php?id=".$resultado[$c]['id']."'>Excluir</a></td>
+                                        <td><a href='perfilFornecedor.php?id=".$resultado[$c]['id']."'<button class='btn btn-primary btn-sm'>Mais</button></a></td>
                                     </tr>";
                             }
                         }
