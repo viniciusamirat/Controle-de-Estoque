@@ -65,7 +65,7 @@
                         <th>Marca</th>
                         <th>Fornecedor</th>
                         <th>Preço</th>
-                        <th>Quantidade em estoque</th>
+                        <th>Em estoque</th>
                         <th></th>
                         <th class="direita"></th>
                     </tr>
