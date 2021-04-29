@@ -20,6 +20,7 @@
         $nome;
         $cpf;
         $tel;
+        $email;
 
         try{
             //Pesquisa as informações da pessoa para colocar os valores no input
@@ -32,6 +33,7 @@
                 $nome = $row['nome'];
                 $cpf = $row['cpf'];
                 $tel = $row['telefone'];
+                $email = $row['email'];
             }
             
         } catch (PDOException $e){
@@ -67,10 +69,15 @@
             </div>
         </div>
         <div class="formulario">
-        <form action="php/updateVendedor.php" method="POST">
-                <input class="input-group" type="text" name="vendedor" <?php echo "value='$nome'"?> placeholder="Nome do Cliente" maxlength="100" required><br>
-                <input class="input-group" type="text" name="cpf" <?php echo "value='$cpf'"?> placeholder="CPF" maxlength="14" required><br>
-                <input class="input-group" type="text" name="tel" <?php echo "value='$tel'"?> placeholder="Telefone" maxlength="15" required><br>
+            <form action="php/updateVendedor.php" method="POST">
+                <label class="rotulo" for="vendedor"><strong>Nome do vendedor:</strong></label>
+                <input class="input-group" type="text" id="vendedor" name="vendedor" <?php echo "value='$nome'"?>  maxlength="100" required><br>
+                <label class="rotulo" for="cpf"><strong>CPF do vendedor:</strong></label>
+                <input class="input-group" type="text" id="cpf" name="cpf" <?php echo "value='$cpf'"?>  maxlength="14" required><br>
+                <label class="rotulo" for="tel"><strong>Telefone do vendedor:</strong></label>
+                <input class="input-group" type="text" id="tel" name="tel" <?php echo "value='$tel'"?>  maxlength="15" required><br>
+                <label class="rotulo" for="email"><strong>Email do vendedor:</strong></label>
+                <input class="input-group" type="text" id="email" name="email" <?php echo "value='$email'"?>  maxlength="100" required><br>
                 <input type="button" onclick="window.location.href='vendedores.php'" value="Cancelar" class="btn btn-danger">
                 <input type="submit" value="Aplicar mudanças" class="btn btn-primary">
             </form>
