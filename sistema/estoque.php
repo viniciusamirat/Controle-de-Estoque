@@ -66,7 +66,6 @@
                         <th>Fornecedor</th>
                         <th>Preço</th>
                         <th>Em estoque</th>
-                        <th></th>
                         <th class="direita"></th>
                     </tr>
                 </thead>
@@ -80,8 +79,7 @@
                                     <td>".$resultado2[$c]['nome']."</td>
                                     <td>R$ ".number_format($resultado1[$c]['preco'], 2, ',', '.')."</td>
                                     <td>".$resultado1[$c]['quantidade']."</td>
-                                    <td><a href='formEditarProduto.php?id=".$resultado1[$c]['id']."'>Editar</a></td>
-                                    <td><a href='php/excluirProduto.php?id=".$resultado1[$c]['id']."'>Excluir</a></td>
+                                    <td><a href='admin/formEditarProduto.php?id=".$resultado1[$c]['id']."'<button class='btn btn-primary btn-sm'>Editar</button></a></td>
                                 </tr>";
                         }
                     }
