@@ -86,12 +86,12 @@
             <div class="rodape">
                 <div class="excluir">
                     <?php
-                        echo "<a href='?id=".$id."'<button class='btn btn-danger'>Excluir</button></a>";
+                        echo "<button class='btn btn-danger' onclick=window.location.href='?id=".$id."'>Excluir</button>";
                     ?>
                 </div>
                 <div class="editar">
                     <?php
-                        echo "<a href='?id=".$id."'<button class='btn btn-primary'>Editar</button></a>";
+                        echo "<button class='btn btn-primary' onclick=window.location.href='?id=".$id."'>Editar</button>";
                     ?>
                 </div>
             </div>

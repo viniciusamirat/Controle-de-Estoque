@@ -70,7 +70,7 @@
                                         <td>".$resultado[$c]['telefone']."</td>
                                         <td>".$resultado[$c]['email']."</td>
                                         <td>".date('d/m/Y', strtotime($resultado[$c]['data_admissao']))."</td>
-                                        <td><a href='perfilVendedor.php?id=".$resultado[$c]['id']."'<button class='btn btn-primary btn-sm'>Mais</button></a></td>
+                                        <td><button class='btn btn-primary btn-sm' onclick=window.location.href='perfilVendedor.php?id=".$resultado[$c]['id']."'>Mais</button></td>
                                     </tr>";
                             }
                         }

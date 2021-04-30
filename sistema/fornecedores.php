@@ -71,7 +71,7 @@
                                         <td>".$resultado[$c]['email']."</td>
                                         <td>".$resultado[$c]['telefone']."</td>
                                         <td>".date('d/m/Y', strtotime($resultado[$c]['data_cadastro']))."</td>
-                                        <td><a href='perfilFornecedor.php?id=".$resultado[$c]['id']."'<button class='btn btn-primary btn-sm'>Mais</button></a></td>
+                                        <td><button class='btn btn-primary btn-sm' onclick=window.location.href='perfilFornecedor.php?id=".$resultado[$c]['id']."'>Mais</button></td>
                                     </tr>";
                             }
                         }

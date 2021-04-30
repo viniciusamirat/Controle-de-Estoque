@@ -86,7 +86,7 @@
                                     <td>".$resultado1[$c]['quantidade']."</td>
                                     <td>R$ ".number_format($resultado1[$c]['preco'], 2, ',', '.')."</td>
                                     <td>".date('d/m/Y', strtotime($resultado1[$c]['data_venda']))."</td>
-                                    <td><a href='admin/formEditarVenda.php?id=".$resultado1[$c]['id']."'<button class='btn btn-primary btn-sm'>Editar</button></a></td>
+                                    <td><button class='btn btn-primary btn-sm' onclick=window.location.href='admin/formEditarVenda.php?id=".$resultado1[$c]['id']."'>Mais</button></td>
                                 </tr>";
                         }
                     }
