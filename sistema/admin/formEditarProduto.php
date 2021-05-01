@@ -136,9 +136,12 @@
         </div>
         <div class="formulario">
         <form action="../php/updateProduto.php" method="POST">
-                <input class="input-group" type="text" name="produto" <?php echo "value='$produto'"?> placeholder="Nome do Produto" maxlength="100" required><br>
-                <input class="input-group" type="text" name="marca" <?php echo "value='$marca'"?> placeholder="Marca" maxlength="50" required><br>
-                <input class="input-group" list="lista" type="text" name="fornecedor"<?php echo "value='$fornecedorNome'"?> placeholder="Fornecedor" maxlength="100" required><br>
+                <label class="rotulo" for="produto"><strong>Nome do Produto:</strong></label>
+                <input class="input-group" id="produto" type="text" name="produto" <?php echo "value='$produto'"?> maxlength="100" required><br>
+                <label class="rotulo" for="marca"><strong>Marca:</strong></label>
+                <input class="input-group" id="marca" type="text" name="marca" <?php echo "value='$marca'"?> maxlength="50" required><br>
+                <label class="rotulo" for="fornecedor"><strong>Fornecedor:</strong></label>
+                <input class="input-group" id="fornecedor" list="lista" type="text" name="fornecedor"<?php echo "value='$fornecedorNome'"?> maxlength="100" required><br>
                     <datalist id="lista">
                         <?php
                             foreach ($resuPesquisa as $row){
@@ -146,9 +149,12 @@
                             }
                         ?>
                     </datalist>
-                <input class="input-group" type="number" step="0.01" name="preco_compra" <?php echo "value='$preco_compra'"?> placeholder="Preço da compra" required><br>
-                <input class="input-group" type="number" step="0.01" name="preco" <?php echo "value='$preco'"?> min=0 placeholder="Preço de venda" required><br>
-                <input class="input-group" type="number" name="quantidade" <?php echo "value='$quantidade'"?> min=1 placeholder="Quantidade em estoque" required><br>
+                <label class="rotulo" for="preco_compra"><strong>Preço da compra:</strong></label>
+                <input class="input-group" id="preco_compra" type="number" step="0.01" name="preco_compra" <?php echo "value='$preco_compra'"?> required><br>
+                <label class="rotulo" for="preco"><strong>Preço de venda:</strong></label>
+                <input class="input-group" id="preco" type="number" step="0.01" name="preco" <?php echo "value='$preco'"?> min=0 required><br>
+                <label class="rotulo" for="quantidade"><strong>Quantidade em estoque:</strong></label>
+                <input class="input-group" id="quantidade" type="number" name="quantidade" <?php echo "value='$quantidade'"?> min=1 required><br>
                 <input type="button" onclick="window.location.href='../estoque.php'" value="Cancelar" class="btn btn-danger">
                 <input type="submit" value="Aplicar mudanças" class="btn btn-primary">
             </form>

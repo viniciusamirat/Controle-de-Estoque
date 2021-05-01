@@ -159,7 +159,8 @@
         </div>
         <div class="formulario">
             <form method="POST" action="../php/updateVenda.php">
-                <input class="input-group" list="browsers1" name="vendedor" <?php echo "value='$cpfVendedor'"?> placeholder="CPF do Vendedor" required><br>
+                <label class="rotulo" for="vendedor"><strong>CPF do Vendedor:</strong></label>
+                <input class="input-group" id="vendedor" list="browsers1" name="vendedor" <?php echo "value='$cpfVendedor'"?> required><br>
                     <datalist id="browsers1">
                         <?php
                             foreach ($resuVendedor as $row){
@@ -167,7 +168,8 @@
                             }
                         ?>
                     </datalist>
-                <input class="input-group" list="browsers2" name="cliente" <?php echo "value='$cpfCliente'"?> placeholder="CPF do Cliente" required><br>
+                <label class="rotulo" for="cliente"><strong>CPF do Cliente:</strong></label>
+                <input class="input-group" id="cliente" list="browsers2" name="cliente" <?php echo "value='$cpfCliente'"?> required><br>
                     <datalist id="browsers2">
                         <?php
                             foreach ($resuCliente as $row){
@@ -175,7 +177,8 @@
                             }
                         ?>
                     </datalist>
-                <input class="input-group" list="browsers3" name="produto" <?php echo "value='$nomeProduto'"?> placeholder="Produto" required><br>
+                <label class="rotulo" for="produto"><strong>Produto:</strong></label>
+                <input class="input-group" id="produto" list="browsers3" name="produto" <?php echo "value='$nomeProduto'"?> required><br>
                     <datalist id="browsers3">
                          <?php
                             foreach ($resuProduto as $row){
@@ -184,8 +187,10 @@
                         ?>
                     </datalist>
                 
-                <input class="input-group" type="number" name="quantidade" min=1 <?php echo "value='$quantidade'"?> placeholder="Quantidade" required><br>
-                <input class="input-group" type="number" step="0.01" min=0 name="preco" <?php echo "value='$preco'"?> placeholder="Preço" required><br>
+                <label class="rotulo" for="quantidade"><strong>Quantidade:</strong></label>
+                <input class="input-group" id="quantidade" type="number" name="quantidade" min=1 <?php echo "value='$quantidade'"?> required><br>
+                <label class="rotulo" for="preco"><strong>Preço:</strong></label>
+                <input class="input-group" id="preco" type="number" step="0.01" min=0 name="preco" <?php echo "value='$preco'"?> required><br>
                 <input type="button" onclick="window.location.href='../vendas.php'" value="Cancelar" class="btn btn-danger">
                 <input type="submit" value="Aplicar mudanças" class="btn btn-primary">
             </form>
