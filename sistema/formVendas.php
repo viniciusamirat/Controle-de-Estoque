@@ -69,7 +69,8 @@
         </div>
         <div class="formulario">
             <form method="POST" action="php/addVenda.php">
-                <input class="input-group" list="browsers1" name="vendedor" placeholder="CPF do Vendedor" required autofocus><br>
+                <label class="rotulo" for="vendedor"><strong>CPF do vendedor:</strong></label>
+                <input class="input-group" id="vendedor" list="browsers1" name="vendedor" required autofocus><br>
                     <datalist id="browsers1">
                         <?php
                             foreach ($resuVendedor as $row){
@@ -77,7 +78,8 @@
                             }
                         ?>
                     </datalist>
-                <input class="input-group" list="browsers2" name="cliente" placeholder="CPF do Cliente" required><br>
+                <label class="rotulo" for="cliente"><strong>CPF do cliente:</strong></label>
+                <input class="input-group" id="cliente" list="browsers2" name="cliente" required><br>
                     <datalist id="browsers2">
                         <?php
                             foreach ($resuCliente as $row){
@@ -85,7 +87,8 @@
                             }
                         ?>
                     </datalist>
-                <input class="input-group" list="browsers3" name="produto" placeholder="Produto" required><br>
+                <label class="rotulo" for="produto"><strong>Produto:</strong></label>
+                <input class="input-group" id="produto" list="browsers3" name="produto" required><br>
                     <datalist id="browsers3">
                          <?php
                             foreach ($resuProduto as $row){
@@ -94,9 +97,12 @@
                         ?>
                     </datalist>
                 
-                <input class="input-group" type="number" name="quantidade" min=1 placeholder="Quantidade" required><br>
-                <input class="input-group" type="number" step="0.01" min=0 name="preco" placeholder="Preço" required><br>
-                <input class="input-group" type="date" name="data" placeholder="Data da venda" required><br>
+                <label class="rotulo" for="quantidade"><strong>Quantidade:</strong></label>
+                <input class="input-group" id="quantidade" type="number" name="quantidade" min=1 required><br>
+                <label class="rotulo" for="preco"><strong>Preço:</strong></label>
+                <input class="input-group" id="preco" type="number" step="0.01" min=0 name="preco" required><br>
+                <label class="rotulo" for="data"><strong>Data da venda:</strong></label>
+                <input class="input-group" id="data" type="date" name="data" required><br>
                 <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-primary">
             </form>

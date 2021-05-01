@@ -53,9 +53,12 @@
         </div>
         <div class="formulario">
             <form action="php/addProduto.php" method="POST">
-                <input class="input-group" type="text" name="produto" placeholder="Nome do Produto" maxlength="100" required autofocus><br>
-                <input class="input-group" type="text" name="marca" placeholder="Marca" maxlength="50" required><br>
-                <input class="input-group" type="text" list="lista" name="fornecedor" placeholder="Fornecedor" required><br>
+                <label class="rotulo" for="produto"><strong>Nome do produto:</strong></label>
+                <input class="input-group" id="produto" type="text" name="produto" maxlength="100" required autofocus><br>
+                <label class="rotulo" for="marca"><strong>Marca:</strong></label>
+                <input class="input-group" id="marca" type="text" name="marca" maxlength="50" required><br>
+                <label class="rotulo" for="fornecedor"><strong>Fornecedor:</strong></label>
+                <input class="input-group" id="fornecedor" type="text" list="lista" name="fornecedor" required><br>
                     <datalist id="lista">
                         <?php
                             foreach ($resultado as $row){
@@ -64,9 +67,12 @@
 
                         ?>
                     </datalist>
-                <input class="input-group" type="number" step="0.01" name="preco_compra" min=0 placeholder="Preço da compra" required><br>
-                <input class="input-group" type="number" step="0.01" name="preco" min=0 placeholder="Preço de venda" required><br>
-                <input class="input-group" type="number" name="quantidade" min=1 placeholder="Quantidade em estoque" required><br>
+                <label class="rotulo" for="preco_compra"><strong>Preço de compra:</strong></label>
+                <input class="input-group" id="preco_compra" type="number" step="0.01" name="preco_compra" min=0 required><br>
+                <label class="rotulo" for="preco"><strong>Preço de venda:</strong></label>
+                <input class="input-group" id="preco" type="number" step="0.01" name="preco" min=0 required><br>
+                <label class="rotulo" for="quantidade"><strong>Quantidade em estoque:</strong></label>
+                <input class="input-group" id="quantidade" type="number" name="quantidade" min=1 required><br>
                 <input type="reset" value="Limpar" class="btn btn-danger">
                 <input type="submit" value="Adicionar" class="btn btn-primary">
             </form>
