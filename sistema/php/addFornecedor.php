@@ -8,19 +8,29 @@
     $data = $_POST['data'];
 
     try {
-        $insert = $conexao->prepare("INSERT INTO fornecedores (nome, produtos, email, telefone, data_cadastro) VALUES (:nome, :produtos, :email, :tel, :data_cadastro)");
-        $insert->execute(array(
-            ':nome'=>$fornecedor,
-            ':produtos'=>$produtos,
-            ':email'=>$email,
-            ':tel'=>$tel,
-            ':data_cadastro'=>$data
+        //Pesquisa se o fornecedor já é cadastrado
+        $pesquisaForn = $conexao->prepare("SELECT * FROM fornecedores WHERE nome = :fornecedor");
+        $pesquisaForn->execute(array(
+            ':fornecedor'=>$fornecedor
         ));
 
-        if ($insert->rowCount() == 1){
-            echo "<script>alert('Gravado com sucesso!!');history.go(-2);</script>";
+        if ($pesquisaForn->rowCount() == 1){
+            echo "<script>alert('O fornecedor já é registrado!');history.go(-1);</script>";
         } else {
-            echo "<script>alert('Erro de gravação!!');history.go(-2);</script>;";
+            $insert = $conexao->prepare("INSERT INTO fornecedores (nome, produtos, email, telefone, data_cadastro) VALUES (:nome, :produtos, :email, :tel, :data_cadastro)");
+            $insert->execute(array(
+                ':nome'=>$fornecedor,
+                ':produtos'=>$produtos,
+                ':email'=>$email,
+                ':tel'=>$tel,
+                ':data_cadastro'=>$data
+            ));
+    
+            if ($insert->rowCount() == 1){
+                echo "<script>alert('Gravado com sucesso!!');history.go(-2);</script>";
+            } else {
+                echo "<script>alert('Erro de gravação!!');history.go(-2);</script>;";
+            }
         }
     } catch (PDOException $e){
         echo "Error: ".$e->getMessage();
