@@ -8,6 +8,10 @@
     $preco = $_POST['preco'];
     $data = $_POST['data'];
     $total = 0;
+    $vendas;
+    $valor_vendas;
+    $compras;
+    $valor_compras;
 
     try {
         //substituindo o cpf pelo id do vendedor
@@ -16,10 +20,29 @@
             ':cpf'=>$vendedor
         ));
 
-        //$resu1 = $comando1->fetchAll();
 
         foreach($comando1->fetchAll() as $row){
             $vendedor = $row['id'];
+        }
+
+        //Pesquisando a quantidade de vendas do vendedor
+        $pesquisaVenda = $conexao->prepare("SELECT vendas FROM vendedores WHERE id = :id");
+        $pesquisaVenda->execute(array(
+            ':id'=>$vendedor
+        ));
+
+        foreach ($pesquisaVenda->fetchAll() as $row){
+            $vendas = $row['vendas'];
+        }
+
+        //Pesquisa o valor total de vendas do vendedor
+        $pesquisaValor = $conexao->prepare("SELECT valor_vendas FROM vendedores WHERE id = :id");
+        $pesquisaValor->execute(array(
+            ':id'=>$vendedor
+        ));
+
+        foreach ($pesquisaValor->fetchAll() as $row){
+            $valor_vendas = $row['valor_vendas'];
         }
 
         //substituindo o cpf pelo id do cliente
@@ -28,10 +51,28 @@
             ':cpf'=>$cliente
         ));
 
-        //$resu2 = $comando2->fetchAll();
-
         foreach($comando2->fetchAll() as $row){
             $cliente = $row['id'];
+        }
+
+        //Pesquisando a quantidade de compras do cliente
+        $pesquisaCompras = $conexao->prepare("SELECT compras FROM clientes WHERE id = :id");
+        $pesquisaCompras->execute(array(
+            ':id'=>$cliente
+        ));
+
+        foreach ($pesquisaCompras->fetchAll() as $row){
+            $compras = $row['compras'];
+        }
+
+        //Pesquisando o valor total de compras do cliente
+        $pesquisaValCom = $conexao->prepare("SELECT valor_compras FROM clientes WHERE id = :id");
+        $pesquisaValCom->execute(array(
+            ':id'=>$cliente
+        ));
+
+        foreach ($pesquisaValCom->fetchAll() as $row){
+            $valor_compras = $row['valor_compras'];
         }
 
         //substituindo o nome do produto pelo id
@@ -40,7 +81,6 @@
             ':nome'=>$produto
         ));
 
-        //$resu3 = $comando3->fetchAll();
 
         foreach($comando3->fetchAll() as $row){
             $produto = $row['id'];
@@ -52,7 +92,6 @@
             ':id'=>$produto
         ));
 
-        //$resu4 = $comando4->fetchAll();
 
         foreach($comando4->fetchAll() as $row){
             $total = $row['quantidade'];
@@ -69,6 +108,22 @@
             $update->execute(array(
                 ':resto'=>$resto,
                 ':id'=>$produto
+            ));
+
+            //Update na quantidade e valor total de vendas do vendedor
+            $upVendas = $conexao->prepare("UPDATE vendedores SET vendas = :vendas, valor_vendas = :valor WHERE id = :idVend");
+            $upVendas->execute(array(
+                ':vendas'=>$vendas + 1,
+                ':valor'=>$preco + $valor_vendas,
+                'idVend'=>$vendedor
+            ));
+
+            //Update na quantidade e valor total de compras do cliente
+            $upCompras = $conexao->prepare("UPDATE clientes SET compras = :compras, valor_compras = :valor_compras WHERE id = :idCli");
+            $upCompras->execute(array(
+                ':compras'=>$compras + 1,
+                ':valor_compras'=>$preco + $valor_compras,
+                'idCli'=>$cliente
             ));
 
             //inclusão
