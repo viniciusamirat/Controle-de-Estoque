@@ -48,7 +48,7 @@
 <body>
     <div>
         <div class="retornar">
-            <button class="btn btn-primary">Retornar</button>
+            <button class="btn btn-primary" onclick="history.go(-1)">Retornar</button>
         </div>
         <div class="fotocenter">
             <img class="foto" src="imagens/foto.jpg" alt="foto de perfil">
@@ -86,12 +86,12 @@
             <div class="rodape">
                 <div class="excluir">
                     <?php
-                        echo "<button class='btn btn-danger' onclick=window.location.href='?id=".$id."'>Excluir</button>";
+                        echo "<button class='btn btn-danger' onclick=window.location.href='php/excluirCliente.php?id=".$id."'>Excluir</button>";
                     ?>
                 </div>
                 <div class="editar">
                     <?php
-                        echo "<button class='btn btn-primary' onclick=window.location.href='?id=".$id."'>Editar</button>";
+                        echo "<button class='btn btn-primary' onclick=window.location.href='admin/formEditarCliente.php?id=".$id."'>Editar</button>";
                     ?>
                 </div>
             </div>
