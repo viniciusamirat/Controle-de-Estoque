@@ -43,8 +43,13 @@
 </head>
 <body>
     <div>
-        <div class="right">
-            <button type="button" class="btn btn-danger" onclick="window.location.href='../php/sair.php'" name="clientes">Sair</button>
+        <div class="botoes">
+            <div class="voltar">
+                <button class="btn btn-primary" onclick="history.go(-1)">Retornar</button>
+            </div>
+            <div class="sair">
+                <button type="button" class="btn btn-danger" onclick="window.location.href='../php/sair.php'" name="clientes">Sair</button>
+            </div>
         </div>
         <div class="container-fluid centralizar cabecalho">
             <h1>Editar Vendedor</h1>

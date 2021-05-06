@@ -65,7 +65,23 @@ th.ambas{
     position: absolute;
     right: 0px;
     padding: 10px;
-  }
+}
+
+.botoes{
+    display: flex;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.voltar {
+    text-align: left;
+}
+
+.sair{
+    margin-left: auto;
+    text-align: right;
+}
 
 label.rotulo {
     text-align: left;
