@@ -28,7 +28,7 @@
     ?>
 </head>
 <body>
-    <div>
+    <div class="fundo">
         <div class="topo">
             <div class="right">
                 Logado como <strong><?php echo $_SESSION['usuario']?></strong>

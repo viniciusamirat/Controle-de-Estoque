@@ -42,7 +42,7 @@
     ?>
 </head>
 <body>
-    <div>
+    <div class="fundo">
         <div class="retornar">
             <button class="btn btn-primary" onclick="history.go(-1)">Retornar</button>
         </div>

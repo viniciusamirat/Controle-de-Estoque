@@ -36,7 +36,7 @@
     ?>
 </head>
 <body>
-    <div>
+    <div class="fundo">
         <div class="topo">
             <div class="right">
                 <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>

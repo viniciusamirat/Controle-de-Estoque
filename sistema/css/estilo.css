@@ -1,3 +1,12 @@
+html {
+    background-color: #dfe9f5bb;
+}
+
+.fundo{
+    height: 100%;
+    background-color: #dfe9f5bb;
+}
+
 .centralizar{
     text-align: center;
 }
@@ -6,24 +15,32 @@
     width: 30%;
     margin: auto;
     text-align: center;
-    padding-top: 5%;
+    border-radius: 10px;
+
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 4%;
+    background-color: white;
 }
 
 .tabela {
     width: 80%;
-    padding-top: 3%;
     margin: auto;
     text-align: center;
+    margin-top: 4%;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .login{
     border-radius: 10px;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.315);
-
     width: 30%;
     height: 240px;
     margin: auto;
     text-align: center;
+    background-color: white;
 }
 
 .container {
@@ -37,10 +54,6 @@
 
 .cabecalho {
     padding-bottom: 10px;
-}
-
-.sombra{
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.315);
 }
 
 thead {
@@ -115,6 +128,7 @@ label.rotulo {
 
 .topo {
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    background-color: white;
 }
 
 .menu {

@@ -42,7 +42,7 @@
     ?>
 </head>
 <body>
-    <div>
+    <div class="fundo">
         <div class="topo">
             <div class="botoes">
                 <div class="voltar">
