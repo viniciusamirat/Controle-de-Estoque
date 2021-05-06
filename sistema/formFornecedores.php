@@ -33,7 +33,7 @@
 
         </div>
         <div class="formulario">
-            <form action="php/addFornecedor.php" method="POST">
+            <form action="php/addFornecedor.php" method="POST" enctype="multipart/form-data">
                 <label class="rotulo" for="fornecedor"><strong>Nome do fornecedor:</strong></label>
                 <input class="input-group" type="text" id="fornecedor" name="fornecedor" maxlength="100" required autofocus><br>
                 <label class="rotulo" for="produtos"><strong>Produtos fornecidos:</strong></label>
@@ -42,6 +42,8 @@
                 <input class="input-group" type="text" id="email" name="email" maxlength="100" required><br>
                 <label class="rotulo" for="tel"><strong>Telefone do fornecedor:</strong></label>
                 <input class="input-group" type="text" id="tel" name="tel" maxlength="15" required><br>
+                <label class="rotulo btn-foto" for="foto">Adicionar foto</label>
+                <input class="form-control-file" type="file" id="foto" name="foto"><br>
                 <label class="rotulo" for="data"><strong>Data de cadastro:</strong></label>
                 <input class="input-group" type="date" id="data" name="data" required><br>
                 <div class="rodape">

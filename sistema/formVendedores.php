@@ -33,7 +33,7 @@
             
         </div>
         <div class="formulario">
-            <form method="POST" action="php/addVendedor.php">
+            <form method="POST" action="php/addVendedor.php" enctype="multipart/form-data">
                 <label class="rotulo" for="vendedor"><strong>Nome do vendedor:</strong></label>
                 <input class="input-group" type="text" id="vendedor" name="vendedor" maxlength="100" required autofocus><br>
                 <label class="rotulo" for="cpf"><strong>CPF do vendedor:</strong></label>
@@ -42,6 +42,8 @@
                 <input class="input-group" type="text" id="tel" name="tel" maxlength="15" required><br>
                 <label class="rotulo" for="email"><strong>Email do vendedor:</strong></label>
                 <input class="input-group" type="text" id="email" name="email" maxlength="100" required><br>
+                <label class="rotulo btn-foto" for="foto">Adicionar foto</label>
+                <input class="form-control-file" type="file" id="foto" name="foto"><br>
                 <label class="rotulo" for="data"><strong>Data de admissão:</strong></label>
                 <input class="input-group" type="date" id="data" name="data" required><br>
                 <div class="rodape">

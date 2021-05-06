@@ -34,6 +34,7 @@
                 $produtos = $row['produtos'];
                 $email = $row['email'];
                 $tel = $row['telefone'];
+                $foto = $row['foto'];
                 $data = $row['data_cadastro'];
             }
         } catch (PDOException $e){
@@ -47,7 +48,7 @@
             <button class="btn btn-primary" onclick="history.go(-1)">Retornar</button>
         </div>
         <div class="fotocenter">
-            <img class="foto" src="imagens/foto.jpg" alt="foto de perfil">
+            <img class="foto" <?php echo "src='imagens/".$foto."'"?> alt="foto de perfil">
             <h1><?php echo $nome ?></h1>
         </div>
         <div class="tabela">
