@@ -186,13 +186,24 @@
                             }
                         ?>
                     </datalist>
-                
                 <label class="rotulo" for="quantidade"><strong>Quantidade:</strong></label>
                 <input class="input-group" id="quantidade" type="number" name="quantidade" min=1 <?php echo "value='$quantidade'"?> required><br>
                 <label class="rotulo" for="preco"><strong>Preço:</strong></label>
                 <input class="input-group" id="preco" type="number" step="0.01" min=0 name="preco" <?php echo "value='$preco'"?> required><br>
-                <input type="button" onclick="window.location.href='../vendas.php'" value="Cancelar" class="btn btn-danger">
-                <input type="submit" value="Aplicar mudanças" class="btn btn-primary">
+                <div class="rodape">
+                    <div class="excluir">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mais
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" <?php echo "href='../php/excluirVenda.php?id=".$id."'" ?>>Excluir venda</a>
+                        </div>
+                    </div>
+                    <div class="mudar">
+                        <input type="button" onclick="window.location.href='../vendas.php'" value="Cancelar" class="btn btn-danger">
+                        <input type="submit" value="Aplicar mudanças" class="btn btn-primary">
+                    </div>
+                </div>
             </form>
         </div>
     </div>

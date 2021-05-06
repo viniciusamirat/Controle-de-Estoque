@@ -70,3 +70,18 @@ th.ambas{
 label.rotulo {
     text-align: left;
 }
+
+.rodape{
+    display: flex;
+}
+
+.excluir {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.mudar{
+    margin-left: auto;
+    text-align: right;
+    padding-bottom: 10px;
+}

@@ -19,7 +19,7 @@ try {
 
         header('location:../estoque.php');
     } else {
-        header('location:../index.html');
+        header('location:./index.html');
     }
 } catch (PDOException $e){
     echo "Error: " . $e->getMessage();
