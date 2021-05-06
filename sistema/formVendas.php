@@ -103,8 +103,14 @@
                 <input class="input-group" id="preco" type="number" step="0.01" min=0 name="preco" required><br>
                 <label class="rotulo" for="data"><strong>Data da venda:</strong></label>
                 <input class="input-group" id="data" type="date" name="data" required><br>
-                <input type="reset" value="Limpar" class="btn btn-danger">
-                <input type="submit" value="Adicionar" class="btn btn-primary">
+                <div class="rodape">
+                    <div class="limpar">
+                        <input type="reset" value="Limpar" class="btn btn-danger">
+                    </div>
+                    <div class="adicionar">
+                        <input type="submit" value="Adicionar" class="btn btn-primary">
+                    </div>
+                </div>
             </form>
         </div>
     </div>

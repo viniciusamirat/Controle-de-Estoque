@@ -85,3 +85,14 @@ label.rotulo {
     text-align: right;
     padding-bottom: 10px;
 }
+
+.limpar {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.adicionar{
+    margin-left: auto;
+    text-align: right;
+    padding-bottom: 10px;
+}

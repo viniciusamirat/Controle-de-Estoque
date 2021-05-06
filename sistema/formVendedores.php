@@ -53,8 +53,14 @@
                 <input class="input-group" type="text" id="email" name="email" maxlength="100" required><br>
                 <label class="rotulo" for="data"><strong>Data de admissão:</strong></label>
                 <input class="input-group" type="date" id="data" name="data" required><br>
-                <input type="reset" value="Limpar" class="btn btn-danger">
-                <input type="submit" value="Adicionar" class="btn btn-primary">
+                <div class="rodape">
+                    <div class="limpar">
+                        <input type="reset" value="Limpar" class="btn btn-danger">
+                    </div>
+                    <div class="adicionar">
+                        <input type="submit" value="Adicionar" class="btn btn-primary">
+                    </div>
+                </div>
             </form>
         </div>
     </div>
