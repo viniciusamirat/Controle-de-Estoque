@@ -61,7 +61,7 @@
                         <th>Telefone</th>
                         <th>Email</th>
                         <th>Cadastro</th>
-                        <th class="direita"></th>
+                        <th class="direita"><button class="btn btn-light btn-sm" onclick="window.location.href='formClientes.php'">Novo+</button></th>
                     </tr>
                 </thead>
                 <tbody>
