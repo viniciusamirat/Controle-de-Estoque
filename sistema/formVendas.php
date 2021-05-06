@@ -47,13 +47,16 @@
                 <div class="voltar">
                     <button class="btn btn-primary" onclick="history.go(-1)">Retornar</button>
                 </div>
+                <div class="meio">
+                    <div class="container-fluid centralizar cabecalho">
+                        <h1>Adicionar Venda</h1>
+                    </div>
+                </div>
                 <div class="sair">
                     <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
                 </div>
             </div>
-            <div class="container-fluid centralizar cabecalho">
-                <h1>Adicionar Venda</h1>
-            </div>
+            
         </div>
         <div class="formulario">
             <form method="POST" action="php/addVenda.php">

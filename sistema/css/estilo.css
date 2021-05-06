@@ -52,10 +52,6 @@ html {
     align-items: center;
 }
 
-.cabecalho {
-    padding-bottom: 10px;
-}
-
 thead {
     background-color: rgb(3, 3, 110);
     color: white;
@@ -91,9 +87,14 @@ th.ambas{
     text-align: left;
 }
 
+.meio {
+    margin:auto;
+}
+
 .sair{
-    margin-left: auto;
+    margin-left: 0px;
     text-align: right;
+
 }
 
 label.rotulo {
@@ -133,4 +134,5 @@ label.rotulo {
 
 .menu {
     padding-bottom: 10px;
+    padding-top: 10px;
 }
