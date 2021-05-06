@@ -43,34 +43,17 @@
 </head>
 <body>
     <div>
-        <div class="botoes">
-            <div class="voltar">
-                <button class="btn btn-primary" onclick="history.go(-1)">Retornar</button>
-            </div>
-            <div class="sair">
-                <button type="button" class="btn btn-danger" onclick="window.location.href='../php/sair.php'" name="clientes">Sair</button>
-            </div>
-        </div>
-        <div class="container-fluid centralizar cabecalho">
-            <h1>Editar Fornecedor</h1>
-        </div>
-        <div class="container-fluid centralizar">
-            <button type="button" class="btn btn-primary" onclick="window.location.href='../estoque.php'" name="estoque">Estoque</button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='../vendas.php'" name="vendas">Vendas</button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='../vendedores.php'" name="vendedores">Vendedores</button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='../clientes.php'" name="clientes">Clientes</button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='../fornecedores.php'" name="fornecedores">Fornecedores</button>
-            <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Mais
-                </button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="../formProdutos.php">Adicionar Produto</a>
-                  <a class="dropdown-item" href="../formVendas.php">Adicionar Venda</a>
-                  <a class="dropdown-item" href="../formVendedores.php">Adicionar Vendedor</a>
-                  <a class="dropdown-item" href="../formClientes.php">Adicionar Cliente</a>
-                  <a class="dropdown-item" href="../formFornecedores.php">Adicionar Fornecedor</a>
+        <div class="topo">
+            <div class="botoes">
+                <div class="voltar">
+                    <button class="btn btn-primary" onclick="history.go(-1)">Retornar</button>
                 </div>
+                <div class="sair">
+                    <button type="button" class="btn btn-danger" onclick="window.location.href='../php/sair.php'" name="clientes">Sair</button>
+                </div>
+            </div>
+            <div class="container-fluid centralizar cabecalho">
+                <h1>Editar Fornecedor</h1>
             </div>
         </div>
         <div class="formulario">
