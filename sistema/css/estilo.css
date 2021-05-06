@@ -57,6 +57,9 @@ thead {
     color: white;
 }
 
+th{
+    vertical-align: middle;
+}
 th.esquerda {
     border-top-left-radius: 10px;
 }
