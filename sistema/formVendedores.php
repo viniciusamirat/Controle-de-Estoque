@@ -40,7 +40,7 @@
                 <label class="rotulo" for="cpf"><strong>CPF do vendedor:</strong></label>
                 <input class="input-group" type="text" id="cpf" name="cpf" maxlength="14" oninput="mascaraCpf(this)" required><br>
                 <label class="rotulo" for="tel"><strong>Telefone do vendedor:</strong></label>
-                <input class="input-group" type="text" id="tel" name="tel" maxlength="15" required><br>
+                <input class="input-group" type="text" id="tel" name="tel" maxlength="15" oninput="mascaraTel(this)" required><br>
                 <label class="rotulo" for="email"><strong>Email do vendedor:</strong></label>
                 <input class="input-group" type="text" id="email" name="email" maxlength="100" required><br>
                 <label class="rotulo btn-foto" for="foto" id="btn" onclick="label()">Adicionar foto</label>

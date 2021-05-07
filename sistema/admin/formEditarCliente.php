@@ -66,7 +66,7 @@
                 <label for="cpf"><strong>CPF do cliente:</strong></label>
                 <input class="input-group" type="text" id="cpf" name="cpf" <?php echo "value='$cpf'"?> maxlength="14" oninput="mascaraCpf(this)" required><br>
                 <label for="tel"><strong>Telefone do cliente:</strong></label>
-                <input class="input-group" type="text" id="tel" name="tel" <?php echo "value='$tel'"?>  maxlength="15" required><br>
+                <input class="input-group" type="text" id="tel" name="tel" <?php echo "value='$tel'"?>  maxlength="15" oninput="mascaraTel(this)" required><br>
                 <label for="email"><strong>Email do cliente:</strong></label>
                 <input class="input-group" type="text" id="email" name="email" <?php echo "value='$email'"?> maxlength="100" required><br>
                 <input type="button" onclick="window.location.href='../clientes.php'" value="Cancelar" class="btn btn-danger">

@@ -42,7 +42,7 @@
                 <label class="rotulo" for="email"><strong>Email do fornecedor:</strong></label>
                 <input class="input-group" type="text" id="email" name="email" maxlength="100" required><br>
                 <label class="rotulo" for="tel"><strong>Telefone do fornecedor:</strong></label>
-                <input class="input-group" type="text" id="tel" name="tel" maxlength="15" required><br>
+                <input class="input-group" type="text" id="tel" name="tel" maxlength="15" oninput="mascaraTel(this)" required><br>
                 <label class="rotulo btn-foto" for="foto" id="btn" onclick="label()">Adicionar foto</label>
                 <input class="form-control-file" type="file" id="foto" name="foto"><br>
                 <label class="rotulo" for="data"><strong>Data de cadastro:</strong></label>

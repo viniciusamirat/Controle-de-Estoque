@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilo.css">
+    <script src="../js/scripts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -67,7 +68,7 @@
                 <label class="rotulo" for="email"><strong>Email do fornecedor:</strong></label>
                 <input class="input-group" type="text" id="email" name="email" <?php echo "value='$email'"?> maxlength="100" required><br>
                 <label class="rotulo" for="tel"><strong>Telefone do fornecedor:</strong></label>
-                <input class="input-group" type="text" id="tel" name="tel" <?php echo "value='$tel'"?> maxlength="15" required><br>
+                <input class="input-group" type="text" id="tel" name="tel" <?php echo "value='$tel'"?> maxlength="15" oninput="mascaraTel(this)" required><br>
                 <input type="button" onclick="window.location.href='../fornecedores.php'" value="Cancelar" class="btn btn-danger">
                 <input type="submit" value="Aplicar mudanças" class="btn btn-primary">
             </form>
