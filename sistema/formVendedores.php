@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/scripts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -42,10 +43,10 @@
                 <input class="input-group" type="text" id="tel" name="tel" maxlength="15" required><br>
                 <label class="rotulo" for="email"><strong>Email do vendedor:</strong></label>
                 <input class="input-group" type="text" id="email" name="email" maxlength="100" required><br>
-                <label class="rotulo btn-foto" for="foto">Adicionar foto</label>
+                <label class="rotulo btn-foto" for="foto" id="btn" onclick="label()">Adicionar foto</label>
                 <input class="form-control-file" type="file" id="foto" name="foto"><br>
                 <label class="rotulo" for="data"><strong>Data de admissão:</strong></label>
-                <input class="input-group" type="date" id="data" name="data" required><br>
+                <input class="input-group" type="date" id="data" name="data" onclick="validar()" required><br>
                 <div class="rodape">
                     <div class="limpar">
                         <input type="reset" value="Limpar" class="btn btn-danger">
