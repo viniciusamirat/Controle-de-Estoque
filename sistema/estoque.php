@@ -40,15 +40,13 @@
             </div>
             <div class="container-fluid centralizar menu">
                 <button type="button" class="btn btn-success" onclick="window.location.href='formVendas.php'" name="vendas">Vender</button>
-                <button type="button" class="btn btn-secondary" onclick="window.location.href='estoque.php'" name="estoque">Estoque</button>
                 <button type="button" class="btn btn-primary" onclick="window.location.href='vendas.php'" name="vendas">Vendas</button>
-                <button type="button" class="btn btn-primary" onclick="window.location.href='vendedores.php'" name="vendedores">Vendedores</button>
                 <button type="button" class="btn btn-primary" onclick="window.location.href='clientes.php'" name="clientes">Clientes</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='estoque.php'" name="estoque">Estoque</button>
                 <button type="button" class="btn btn-primary" onclick="window.location.href='fornecedores.php'" name="fornecedores">Fornecedores</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='vendedores.php'" name="vendedores">Vendedores</button>
             </div>
         </div>
-        
-
         <div class="tabela">
             <table  class="table table-hover">
                 <thead>
