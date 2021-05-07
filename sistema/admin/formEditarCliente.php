@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilo.css">
+    <script src="../js/scripts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -63,7 +64,7 @@
                 <label class="rotulo" for="cliente"><strong>Nome do cliente:</strong></label>
                 <input class="input-group" type="text" id="cliente" name="cliente" <?php echo "value='$nome'"?> maxlength="100" required><br>
                 <label for="cpf"><strong>CPF do cliente:</strong></label>
-                <input class="input-group" type="text" id="cpf" name="cpf" <?php echo "value='$cpf'"?> maxlength="14" required><br>
+                <input class="input-group" type="text" id="cpf" name="cpf" <?php echo "value='$cpf'"?> maxlength="14" oninput="mascaraCpf(this)" required><br>
                 <label for="tel"><strong>Telefone do cliente:</strong></label>
                 <input class="input-group" type="text" id="tel" name="tel" <?php echo "value='$tel'"?>  maxlength="15" required><br>
                 <label for="email"><strong>Email do cliente:</strong></label>

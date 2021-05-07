@@ -38,7 +38,7 @@
                 <label class="rotulo" for="cliente"><strong>Nome do cliente:</strong></label>
                 <input class="input-group" type="text" id="cliente" name="cliente" maxlength="100" required autofocus><br>
                 <label for="cpf"><strong>CPF do cliente:</strong></label>
-                <input class="input-group" type="text" id="cpf" name="cpf" maxlength="14" required><br>
+                <input class="input-group" type="text" id="cpf" name="cpf" maxlength="14" oninput="mascaraCpf(this)" required><br>
                 <label for="tel"><strong>Telefone do cliente:</strong></label>
                 <input class="input-group" type="text" id="tel" name="tel"  maxlength="15" required><br>
                 <label for="email"><strong>Email do cliente:</strong></label>

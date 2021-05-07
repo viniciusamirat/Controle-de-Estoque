@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilo.css">
+    <script src="../js/scripts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -150,7 +151,7 @@
         <div class="formulario">
             <form method="POST" action="../php/updateVenda.php">
                 <label class="rotulo" for="vendedor"><strong>CPF do Vendedor:</strong></label>
-                <input class="input-group" id="vendedor" list="browsers1" name="vendedor" <?php echo "value='$cpfVendedor'"?> required><br>
+                <input class="input-group" id="vendedor" list="browsers1" name="vendedor" <?php echo "value='$cpfVendedor'"?> oninput="mascaraCpf(this)" required><br>
                     <datalist id="browsers1">
                         <?php
                             foreach ($resuVendedor as $row){
@@ -159,7 +160,7 @@
                         ?>
                     </datalist>
                 <label class="rotulo" for="cliente"><strong>CPF do Cliente:</strong></label>
-                <input class="input-group" id="cliente" list="browsers2" name="cliente" <?php echo "value='$cpfCliente'"?> required><br>
+                <input class="input-group" id="cliente" list="browsers2" name="cliente" <?php echo "value='$cpfCliente'"?> oninput="mascaraCpf(this)" required><br>
                     <datalist id="browsers2">
                         <?php
                             foreach ($resuCliente as $row){
