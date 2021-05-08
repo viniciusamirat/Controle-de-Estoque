@@ -31,7 +31,7 @@ function outFoto(){
 function validar(){
     let foto = window.document.getElementById("foto")
     let nameFoto = window.document.getElementById("nameFoto")
-
+    
     if (foto.value != false){
         btn.innerHTML = "Com foto"
         btn.style.background = "green"
@@ -47,6 +47,7 @@ function validar(){
 
         nameFoto.innerHTML = ""
     }
+ 
 }
 
 //Funções dos inputs de cpf e telefone

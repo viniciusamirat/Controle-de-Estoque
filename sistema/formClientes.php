@@ -45,9 +45,9 @@
                 <input class="input-group" type="text" id="email" name="email" maxlength="100" required><br>
                 <label class="rotulo btn-foto" for="foto" id="btn" onclick="label()" onmouseenter="inFoto()" onmouseout="outFoto()">Adicionar foto</label><br>
                 <label id="nameFoto"></label>
-                <input class="form-control-file" type="file" id="foto" name="foto"><br>
-                <label for="data"><strong>Data de cadastro:</strong></label>
-                <input class="input-group" type="date" id="data" name="data" onclick="validar()" required><br>
+                <input class="form-control-file" type="file" id="foto" name="foto" oninput="validar()"><br>
+                <label class="rotulo" for="data"><strong>Data de cadastro:</strong></label>
+                <input class="input-group" type="date" id="data" name="data" required><br>
                 <div class="rodape">
                     <div class="limpar">
                         <input type="reset" value="Limpar" class="btn btn-danger">
