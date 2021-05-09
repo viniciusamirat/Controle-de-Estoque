@@ -1,4 +1,5 @@
 <?php
+include_once "autenticacaoAdmin.php";
 include_once "conexao.php";
 
 $nome = $_POST['vendedor'];
