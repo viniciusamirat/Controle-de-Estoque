@@ -6,7 +6,11 @@ $cpf = $_POST['cpf'];
 $tel = $_POST['tel'];
 $email = $_POST['email'];
 $foto = $_FILES['foto']['name'];
-$foto1 = $cpf."_".$foto;
+if ($foto == null){
+    $foto1 = "foto.jpg";
+} else {
+    $foto1 = $cpf."_".$foto;
+}
 $data = $_POST['data'];
 try {
     $pesquisaCpf = $conexao->prepare("SELECT * FROM clientes WHERE cpf = :cpf");

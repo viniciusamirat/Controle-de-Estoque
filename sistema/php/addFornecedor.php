@@ -6,7 +6,11 @@
     $email = $_POST['email'];
     $tel = $_POST['tel'];
     $foto = $_FILES['foto']['name'];
-    $foto1 = $fornecedor."_".$foto;
+    if ($foto == null){
+        $foto1 = "foto.jpg";
+    } else {
+        $foto1 = $fornecedor."_".$foto;
+    }
     $data = $_POST['data'];
 
     try {
