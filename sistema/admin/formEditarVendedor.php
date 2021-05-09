@@ -62,7 +62,7 @@
         <div class="formulario">
             <form action="../php/updateVendedor.php" method="POST">
                 <label class="rotulo" for="vendedor"><strong>Nome do vendedor:</strong></label>
-                <input class="input-group" type="text" id="vendedor" name="vendedor" <?php echo "value='$nome'"?>  maxlength="100" required><br>
+                <input class="input-group" type="text" id="vendedor" name="vendedor" <?php echo "value='$nome'"?>  maxlength="100" oninput="mascaraName(this)" required><br>
                 <label class="rotulo" for="cpf"><strong>CPF do vendedor:</strong></label>
                 <input class="input-group" type="text" id="cpf" name="cpf" <?php echo "value='$cpf'"?>  maxlength="14" oninput="mascaraCpf(this)" required><br>
                 <label class="rotulo" for="tel"><strong>Telefone do vendedor:</strong></label>
