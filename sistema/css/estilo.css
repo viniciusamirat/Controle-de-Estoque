@@ -150,3 +150,8 @@ label.btn-foto{
     padding: 10px;
     border-radius: 5px;
 }
+
+a.nome {
+    text-decoration: none;
+    color: black;
+}

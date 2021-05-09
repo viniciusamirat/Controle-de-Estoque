@@ -19,12 +19,12 @@
 
         $resultado1 = $venda->fetchAll();
 
-        $vendedor = $conexao->prepare("SELECT nome FROM vendedores INNER JOIN vendas ON vendedores.id = vendas.id_vendedor ORDER BY vendas.id;");
+        $vendedor = $conexao->prepare("SELECT nome, vendedores.id FROM vendedores INNER JOIN vendas ON vendedores.id = vendas.id_vendedor ORDER BY vendas.id;");
         $vendedor->execute();
 
         $resultado2 = $vendedor->fetchAll();
 
-        $cliente = $conexao->prepare("SELECT nome FROM clientes INNER JOIN vendas ON clientes.id = vendas.id_cliente ORDER BY vendas.id;");
+        $cliente = $conexao->prepare("SELECT nome, clientes.id FROM clientes INNER JOIN vendas ON clientes.id = vendas.id_cliente ORDER BY vendas.id;");
         $cliente->execute();
 
         $resultado3 = $cliente->fetchAll();
@@ -72,8 +72,8 @@
                      if ($venda->rowCount() > 0){
                         for ($c = count($resultado1)-1;$c >= 0;$c--){
                             echo "<tr>
-                                    <td>".$resultado2[$c]['nome']."</td>
-                                    <td>".$resultado3[$c]['nome']."</td>
+                                    <td><a class='nome' href='perfilVendedor.php?id=".$resultado2[$c]['id']."'>".$resultado2[$c]['nome']."</a></td>
+                                    <td><a class='nome' href='perfilCliente.php?id=".$resultado3[$c]['id']."'>".$resultado3[$c]['nome']."</a></td>
                                     <td>".$resultado4[$c]['produto']."</td>
                                     <td>".$resultado1[$c]['quantidade']."</td>
                                     <td>R$ ".number_format($resultado1[$c]['preco'], 2, ',', '.')."</td>
