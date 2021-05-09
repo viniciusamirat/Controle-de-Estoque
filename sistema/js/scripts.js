@@ -3,11 +3,8 @@ let btn
 let bandeira = false
 
 function label(){
-    btn = window.document.getElementById("btn")
-    btn.innerHTML = "Carregando"
-    btn.style.background = "rgb(219, 217, 217)"
-    btn.style.color = "black"
     bandeira = true
+    validar()
 }
 
 function inFoto(){
@@ -45,7 +42,7 @@ function validar(){
         btn.style.color = "black"
         bandeira = false
 
-        nameFoto.innerHTML = ""
+        nameFoto.innerHTML = null
     }
  
 }
