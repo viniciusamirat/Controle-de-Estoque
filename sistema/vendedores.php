@@ -49,7 +49,7 @@
                         <th>Telefone</th>
                         <th>Email</th>
                         <th>Admissão</th>
-                        <th class="direita"><button class="btn btn-light btn-sm" onclick="window.location.href='formVendedores.php'">Novo+</button></th>
+                        <th class="direita"><button class="btn btn-light btn-sm" <?php echo $_SESSION['btn'];?> onclick="window.location.href='formVendedores.php'">Novo+</button></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,7 +62,7 @@
                                         <td>".$resultado[$c]['telefone']."</td>
                                         <td>".$resultado[$c]['email']."</td>
                                         <td>".date('d/m/Y', strtotime($resultado[$c]['data_admissao']))."</td>
-                                        <td><button class='btn btn-primary btn-sm' onclick=window.location.href='perfilVendedor.php?id=".$resultado[$c]['id']."'>Mais</button></td>
+                                        <td><button class='btn btn-primary btn-sm' ".$_SESSION['btn']." onclick=window.location.href='perfilVendedor.php?id=".$resultado[$c]['id']."'>Mais</button></td>
                                     </tr>";
                             }
                         }

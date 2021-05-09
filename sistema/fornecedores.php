@@ -50,7 +50,7 @@
                         <th>Email</th>
                         <th>Telefone</th>
                         <th>Cadastro</th>
-                        <th class="direita"><button class="btn btn-light btn-sm" onclick="window.location.href='formFornecedores.php'">Novo+</button></th>
+                        <th class="direita"><button class="btn btn-light btn-sm" <?php echo $_SESSION['btn']; ?> onclick="window.location.href='formFornecedores.php'">Novo+</button></th>
                     </tr>
                 </thead>
                 <tbody>

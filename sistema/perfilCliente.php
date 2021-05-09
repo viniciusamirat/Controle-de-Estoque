@@ -87,7 +87,7 @@
             <div class="rodape">
                 <div class="excluir">
                     <?php
-                        echo "<button class='btn btn-danger' onclick=window.location.href='php/excluirCliente.php?id=".$id."'>Excluir</button>";
+                        echo "<button class='btn btn-danger' ".$_SESSION['btn']." onclick=window.location.href='php/excluirCliente.php?id=".$id."'>Excluir</button>";
                     ?>
                 </div>
                 <div class="editar">

@@ -31,7 +31,7 @@
     <div class="fundo">
         <div class="topo">
             <div class="right">
-                Logado como <strong><?php echo $_SESSION['usuario']?></strong>
+                Logado como <strong><?php //echo $_SESSION['usuario']?></strong>
                 
                 <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
             </div>
@@ -56,7 +56,7 @@
                         <th>Fornecedor</th>
                         <th>Preço</th>
                         <th>Em estoque</th>
-                        <th class="direita"><button class="btn btn-light btn-sm" onclick="window.location.href='formProdutos.php'">Novo+</button></th>
+                        <th class="direita"><button class="btn btn-light btn-sm" <?php echo $_SESSION['btn'];?> onclick="window.location.href='formProdutos.php'">Novo+</button></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,7 +69,7 @@
                                     <td>".$resultado2[$c]['nome']."</td>
                                     <td>R$ ".number_format($resultado1[$c]['preco'], 2, ',', '.')."</td>
                                     <td>".$resultado1[$c]['quantidade']."</td>
-                                    <td><button class='btn btn-primary btn-sm' onclick=window.location.href='admin/formEditarProduto.php?id=".$resultado1[$c]['id']."'>Editar</button></td>
+                                    <td><button class='btn btn-primary btn-sm' ".$_SESSION['btn']." onclick=window.location.href='admin/formEditarProduto.php?id=".$resultado1[$c]['id']."'>Editar</button></td>
                                 </tr>";
                         }
                     }

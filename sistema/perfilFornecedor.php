@@ -77,12 +77,12 @@
             <div class="rodape">
                 <div class="excluir">
                     <?php
-                        echo "<button class='btn btn-danger' onclick=window.location.href='php/excluirFornecedor.php?id=".$id."'>Excluir</button>";
+                        echo "<button class='btn btn-danger' ".$_SESSION['btn']." onclick=window.location.href='php/excluirFornecedor.php?id=".$id."'>Excluir</button>";
                     ?>
                 </div>
                 <div class="editar">
                     <?php
-                        echo "<button class='btn btn-primary' onclick=window.location.href='admin/formEditarFornecedor.php?id=".$id."'>Editar</button>";
+                        echo "<button class='btn btn-primary' ".$_SESSION['btn']." onclick=window.location.href='admin/formEditarFornecedor.php?id=".$id."'>Editar</button>";
                     ?>
                 </div>
             </div>
