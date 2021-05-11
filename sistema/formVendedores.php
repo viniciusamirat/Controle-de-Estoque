@@ -36,7 +36,7 @@
         <div class="formulario">
             <form method="POST" action="php/addVendedor.php" enctype="multipart/form-data">
                 <label class="rotulo" for="vendedor"><strong>Nome do vendedor:</strong></label>
-                <input class="input-group" type="text" id="vendedor" name="vendedor" maxlength="100" oninput="mascaraName(this)" required autofocus><br>
+                <input class="input-group" type="text" id="vendedor" name="vendedor" maxlength="100" required autofocus><br>
                 <label class="rotulo" for="cpf"><strong>CPF do vendedor:</strong></label>
                 <input class="input-group" type="text" id="cpf" name="cpf" maxlength="14" oninput="mascaraCpf(this)" required><br>
                 <label class="rotulo" for="tel"><strong>Telefone do vendedor:</strong></label>

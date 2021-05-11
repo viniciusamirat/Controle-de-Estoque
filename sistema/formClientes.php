@@ -36,7 +36,7 @@
         <div class="formulario">
             <form action="php/addCliente.php" method="POST" enctype="multipart/form-data">
                 <label class="rotulo" for="cliente"><strong>Nome do cliente:</strong></label>
-                <input class="input-group" type="text" id="cliente" name="cliente" maxlength="100" oninput="mascaraName(this)" required autofocus><br>
+                <input class="input-group" type="text" id="cliente" name="cliente" maxlength="100" required autofocus><br>
                 <label for="cpf"><strong>CPF do cliente:</strong></label>
                 <input class="input-group" type="text" id="cpf" name="cpf" maxlength="14" oninput="mascaraCpf(this)" required><br>
                 <label for="tel"><strong>Telefone do cliente:</strong></label>

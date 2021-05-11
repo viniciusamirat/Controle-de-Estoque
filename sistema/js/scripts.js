@@ -78,7 +78,7 @@ function mascaraTel(i){
     if (v.length == 9) i.value += "-";
  
 }
-
+/*
 function mascaraName(i){
    
     var v = i.value;
@@ -87,4 +87,4 @@ function mascaraName(i){
        i.value = v.substring(0, v.length-1);
        return;
     }
-}
+}*/
