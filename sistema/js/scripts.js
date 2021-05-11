@@ -73,7 +73,7 @@ function mascaraTel(i){
     }
     
     i.setAttribute("maxlength", "14");
-    if (v.length == 1) i.value = "(";
+    if (v.length == 1) i.value = "(" + i.value;
     if (v.length == 3) i.value += ")";
     if (v.length == 9) i.value += "-";
  
