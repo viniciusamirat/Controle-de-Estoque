@@ -36,7 +36,7 @@
                 <button type="button" class="btn btn-danger" onclick="window.location.href='php/sair.php'" name="clientes">Sair</button>
             </div>
             <div class="container-fluid centralizar cabecalho">
-                <h1>Estoque *testar todas as funcionalidades de adm*</h1>
+                <h1>Estoque</h1>
             </div>
             <div class="container-fluid centralizar menu">
                 <button type="button" class="btn btn-success" onclick="window.location.href='formVendas.php'" name="vendas">Vender</button>
